@@ -1,5 +1,4 @@
 using Godot;
-using GodotSurvivors.Scripts.Twitch;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,14 +28,10 @@ public partial class GameManager : Node
     private List<Choice> _currentVotes;
     private ProgressBar _voteTimeBar;
     private Label _voteTimeBarLabel;
-
-    private TwitchConnection _twitchConnection;
     private List<Powerup> _powerups = new();
     private List<EnemyPowerup> _enemyPowerups = new();
     private Dictionary<PowerupType, int> _powerupsCount = new();
     private Dictionary<EnemyPowerupType, int> _enemyPowerupsCount = new();
-
-    private TwitchUsers _users = new();
 
     private Label _gameTimeLabel;
     public double GameTime { get; private set; } = 0;
@@ -54,15 +49,12 @@ public partial class GameManager : Node
 
         _maxPlayerXP = GetMaxXPPerLevel(1);
 
-        _twitchConnection = GetNode<TwitchConnection>("/root/TwitchConnection");
-
         _gameTimeLabel = GetNode<Label>("/root/MainScene/HUD/GameTime");
         _playerXpBar = GetNode<ProgressBar>("/root/MainScene/HUD/PlayerXPBar");
         _playerXpBar.MaxValue = _maxPlayerXP;
         _voteTimeBar = GetNode<ProgressBar>("/root/MainScene/HUD/VoteTimeBar");
         _voteTimeBar.MaxValue = VoteTime;
         _voteTimeBarLabel = _voteTimeBar.GetNode<Label>("Label");
-        _twitchConnection.OnMessageReceived += OnTwitchMessage;
 
         _upgradeView = GetNode<UpgradeView>("/root/MainScene/HUD/UpgradeContainer");
         _upgradeView.OnChoose += OnChoose;
@@ -104,8 +96,6 @@ public partial class GameManager : Node
 
         if (Player == null) return;
 
-        _users.Update(delta);
-
         _enemySpawnTimeLeft -= delta;
         if (_enemySpawnTimeLeft > 0) return;
         _enemySpawnTimeLeft = _enemyManager.SpawnDelay;
@@ -119,12 +109,6 @@ public partial class GameManager : Node
         }
 
         //_enemyManager.SpawnEnemy();
-
-        foreach (var username in _users.Users)
-        {
-            var enemy = _enemyManager.SpawnEnemy();
-            enemy.SetName(username);
-        }
     }
 
     //public override void _PhysicsProcess(double delta)
@@ -142,22 +126,6 @@ public partial class GameManager : Node
             _powerups.Add(powerup);
             _powerupsCount.Add(powerup.Type, 0);
         }
-        //var folderName = "res://Powerups";
-        //var directory = DirAccess.Open(folderName);
-        //if (directory == null) return;
-
-        //directory.ListDirBegin();
-        //string fileName = directory.GetNext();
-        //while (fileName != "")
-        //{
-        //    if (!directory.CurrentIsDir())
-        //    {
-        //        Powerup powerup = GD.Load<Powerup>($"{folderName}/{fileName}");
-        //        _powerups.Add(powerup);
-        //        _powerupsCount.Add(powerup.Type, 0);
-        //    }
-        //    fileName = directory.GetNext();
-        //}
     }
 
     private void LoadEnemyPowerups()
@@ -167,41 +135,6 @@ public partial class GameManager : Node
             EnemyPowerup powerup = GD.Load<EnemyPowerup>(path);
             _enemyPowerups.Add(powerup);
             _enemyPowerupsCount.Add(powerup.Type, 0);
-        }
-        //var folderName = "res://Powerups/Enemy";
-        //var directory = DirAccess.Open(folderName);
-        //if (directory == null) return;
-
-        //directory.ListDirBegin();
-        //string fileName = directory.GetNext();
-        //while (fileName != "")
-        //{
-        //    if (!directory.CurrentIsDir())
-        //    {
-        //        EnemyPowerup powerup = GD.Load<EnemyPowerup>($"{folderName}/{fileName}");
-        //        _enemyPowerups.Add(powerup);
-        //        _enemyPowerupsCount.Add(powerup.Type, 0);
-        //    }
-        //    fileName = directory.GetNext();
-        //}
-    }
-
-    public void OnTwitchMessage(string username, string message)
-    {
-        GD.Print($"Message sent by {username}: {message}");
-        _users.OnMessage(username);
-
-        if (_isVotePhase)
-        {
-            if (!int.TryParse(message, out int number)) return;
-
-            if (!_playerVotes.TryAdd(username, number))
-                _playerVotes[username] = number;
-
-            for (int i = 1; i <= 3; ++i)
-            {
-                _upgradeView.UpdateChoice(i, _playerVotes.Values.Count(x => x == i));
-            }
         }
     }
 
@@ -233,14 +166,6 @@ public partial class GameManager : Node
         _playerXpBar.Hide();
         _voteTimeBar.Show();
 
-        //List<Powerup> availables = new(_powerups);
-        //List<Powerup> powerupChoices = new();
-        //for (int i = 0; i < 3; ++i)
-        //{
-        //    var randIndex = GD.RandRange(0, availables.Count - 1);
-        //    powerupChoices.Add(availables[randIndex]);
-        //    availables.RemoveAt(randIndex);
-        //}
         List<Powerup> powerupChoices = _powerups.Where(p => _powerupsCount[p.Type] < p.MaxCumul)
             .OrderBy(_ => GD.Randf())
             .Take(3)
@@ -319,9 +244,9 @@ public partial class GameManager : Node
         .OrderBy(enemy => (Player.Position - enemy.Position).Length())
         .FirstOrDefault();
 
-    //=LOG(PUISSANCE(A2;8)*10)*5
     internal int GetMaxXPPerLevel(int level) => Mathf.RoundToInt(Math.Log10(Math.Pow(level, 10) * 10) * 5);
 
     internal int GetMaxEnemyLifepoints(int level) => Mathf.RoundToInt(Math.Log10(level * 10));
+
     internal int GetMaxEnemyLifepoints() => GetMaxEnemyLifepoints(_playerLevel);
 }

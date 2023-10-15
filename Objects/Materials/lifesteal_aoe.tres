@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://c3477xk1avb8x"]
 
-[ext_resource type="Shader" uid="uid://cp32e4fj4hbw5" path="res://Objects/Shaders/LifestealAOE.tres" id="1_ohivu"]
+[ext_resource type="Shader" uid="uid://cp32e4fj4hbw5" path="res://Objects/Shaders/ScrollingCircle.tres" id="1_ohivu"]
 [ext_resource type="Texture2D" uid="uid://b6n8qgnrt5060" path="res://Objects/Textures/Patterns/pattern_42.png" id="2_imxf1"]
 
 [resource]

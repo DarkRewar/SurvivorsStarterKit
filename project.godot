@@ -10,9 +10,9 @@ config_version=5
 
 [application]
 
-config/name="Godot Survivors"
+config/name="Survivors Starter Kit"
 run/main_scene="res://Scenes/main_scene.tscn"
-config/features=PackedStringArray("4.1", "C#", "Forward Plus")
+config/features=PackedStringArray("4.1", "Forward Plus")
 run/max_fps=30
 boot_splash/show_image=false
 boot_splash/fullsize=false
@@ -22,7 +22,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameManager="*res://Scripts/GameManager.cs"
-TwitchConnection="*res://Scripts/Twitch/TwitchConnection.cs"
 
 [display]
 
@@ -32,7 +31,7 @@ window/vsync/vsync_mode=2
 
 [dotnet]
 
-project/assembly_name="Godot Survivors"
+project/assembly_name="Survivors Starter Kit"
 
 [editor_plugins]
 

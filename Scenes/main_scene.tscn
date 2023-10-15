@@ -43,7 +43,7 @@ light_indirect_energy = 2.0
 light_volumetric_fog_energy = 0.0
 shadow_enabled = true
 
-[node name="GridMap2" type="GridMap" parent="."]
+[node name="GridMap" type="GridMap" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, 0)
 mesh_library = ExtResource("7_3g017")
 cell_size = Vector3(4, 0.8, 4)
@@ -63,9 +63,9 @@ camera_attributes = SubResource("CameraAttributesPractical_vfufh")
 [node name="HUD" parent="." instance=ExtResource("4_4douh")]
 script = ExtResource("9_hf6p0")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="GroundCollider" type="StaticBody3D" parent="."]
 collision_layer = 15
 collision_mask = 15
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GroundCollider"]
 shape = SubResource("BoxShape3D_3ms7s")
