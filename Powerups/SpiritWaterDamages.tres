@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Powerup" load_steps=2 format=3 uid="uid://bq67j65mjmxnp"]
+
+[ext_resource type="Script" path="res://Scripts/Powerup.cs" id="1_mfl2n"]
+
+[resource]
+script = ExtResource("1_mfl2n")
+Type = 7
+Name = "Poison - Dégâts+"
+Description = "Augmente les dégâts du poison: +5% (+{0}%)"
+IsCumulable = true
+MaxCumul = 6

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Powerup" load_steps=2 format=3 uid="uid://cu03v5sgelxvg"]
+
+[ext_resource type="Script" path="res://Scripts/Powerup.cs" id="1_jlccq"]
+
+[resource]
+script = ExtResource("1_jlccq")
+Type = 6
+Name = "Vol de vie - Délai-"
+Description = "Réduit le délai entre deux ponctions: -5% ({0}sec.)"
+IsCumulable = true
+MaxCumul = 6

@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://be0fj2ysqm1a4"]
+
+[ext_resource type="Material" uid="uid://de7njvbjo1adr" path="res://Objects/Materials/bullet.tres" id="2_hsdve"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_j4oj2"]
+
+[sub_resource type="Curve" id="Curve_l8cpc"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.10048, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_38mb5"]
+curve = SubResource("Curve_l8cpc")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_y5uhh"]
+direction = Vector3(0, 0, 0)
+spread = 180.0
+flatness = 0.69
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 0.5
+initial_velocity_max = 1.0
+scale_curve = SubResource("CurveTexture_38mb5")
+
+[sub_resource type="SphereMesh" id="SphereMesh_e5nuh"]
+material = ExtResource("2_hsdve")
+radius = 0.2
+height = 0.1
+
+[node name="Bullet" type="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 0.5, 2.08165e-12)
+collision_layer = 4
+collision_mask = 10
+gravity_scale = 2.66454e-15
+max_contacts_reported = 1
+contact_monitor = true
+lock_rotation = true
+linear_damp_mode = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+shape = SubResource("SphereShape3D_j4oj2")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+radius = 2.0
+material = ExtResource("2_hsdve")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+amount = 32
+process_material = SubResource("ParticleProcessMaterial_y5uhh")
+draw_pass_1 = SubResource("SphereMesh_e5nuh")

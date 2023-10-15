@@ -1,0 +1,11 @@
+# Created by Kenney (www.kenney.nl)
+
+newmtl dark
+Kd 0.2196078 0.2196078 0.2392156
+
+newmtl grey-light
+Kd 0.7450981 0.7607843 0.8313726
+
+newmtl grey
+Kd 0.5254902 0.5450979 0.6313726
+

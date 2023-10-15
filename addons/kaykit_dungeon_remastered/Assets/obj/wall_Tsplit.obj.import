@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cp8wwd5u5nt3a"
+path="res://.godot/imported/wall_Tsplit.obj-aa5ee2f7876ba7280759e2246e95433c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wall_Tsplit.obj-aa5ee2f7876ba7280759e2246e95433c.mesh"]
+
+source_file="res://addons/kaykit_dungeon_remastered/Assets/obj/wall_Tsplit.obj"
+dest_files=["res://.godot/imported/wall_Tsplit.obj-aa5ee2f7876ba7280759e2246e95433c.mesh", "res://.godot/imported/wall_Tsplit.obj-aa5ee2f7876ba7280759e2246e95433c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

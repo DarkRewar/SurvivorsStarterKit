@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EnemyPowerup" load_steps=2 format=3 uid="uid://c04hng7berhk2"]
+
+[ext_resource type="Script" path="res://Scripts/EnemyPowerup.cs" id="1_da31g"]
+
+[resource]
+script = ExtResource("1_da31g")
+Name = "Monstre: Guerrier"
+Description = "Débloque la classe d'ennemi \"Guerrier\""
+MaxStack = 1
+Type = 3

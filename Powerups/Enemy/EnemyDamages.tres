@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="StatEnemyPowerup" load_steps=2 format=3 uid="uid://bp1m84vyf80tc"]
+
+[ext_resource type="Script" path="res://Scripts/StatEnemyPowerup.cs" id="1_f3h3l"]
+
+[resource]
+script = ExtResource("1_f3h3l")
+Value = 5.0
+Name = "Monstres dégâts+"
+Description = "Les monstres font 5 dégâts de plus (total +{0} dégâts)"
+MaxStack = 100
+Type = 101

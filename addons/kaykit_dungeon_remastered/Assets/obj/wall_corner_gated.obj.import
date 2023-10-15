@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dnatwjy557py3"
+path="res://.godot/imported/wall_corner_gated.obj-5469ca2df22285003318398e079d3dee.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wall_corner_gated.obj-5469ca2df22285003318398e079d3dee.mesh"]
+
+source_file="res://addons/kaykit_dungeon_remastered/Assets/obj/wall_corner_gated.obj"
+dest_files=["res://.godot/imported/wall_corner_gated.obj-5469ca2df22285003318398e079d3dee.mesh", "res://.godot/imported/wall_corner_gated.obj-5469ca2df22285003318398e079d3dee.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

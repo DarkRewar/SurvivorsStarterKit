@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://yavj1cgna4s3"
+path="res://.godot/imported/barrier.obj-2f223d9f3521021e058ebd85b5a165ba.mesh"
+
+[deps]
+
+files=["res://.godot/imported/barrier.obj-2f223d9f3521021e058ebd85b5a165ba.mesh"]
+
+source_file="res://addons/kaykit_dungeon_remastered/Assets/obj/barrier.obj"
+dest_files=["res://.godot/imported/barrier.obj-2f223d9f3521021e058ebd85b5a165ba.mesh", "res://.godot/imported/barrier.obj-2f223d9f3521021e058ebd85b5a165ba.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

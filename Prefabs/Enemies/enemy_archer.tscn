@@ -1,0 +1,79 @@
+[gd_scene load_steps=9 format=3 uid="uid://b3p2ih6wayfgl"]
+
+[ext_resource type="Script" path="res://Scripts/Enemy.cs" id="1_2284y"]
+[ext_resource type="PackedScene" uid="uid://cqg0hvlemgom" path="res://addons/kaykit_skeleton_pack/enemy_skeleton_archer.tscn" id="2_bc51o"]
+[ext_resource type="PackedScene" uid="uid://dbch8185xjxrs" path="res://Prefabs/damage_particles.tscn" id="3_ud721"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_cmmfk"]
+radius = 1.0
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ptn36"]
+animation = &"KayKit Animated Character|Idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gor3g"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xywv6"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_37bnq"]
+"states/KayKit Animated Character|Idle/node" = SubResource("AnimationNodeAnimation_ptn36")
+"states/KayKit Animated Character|Idle/position" = Vector2(482, 100)
+states/Start/position = Vector2(162, 100)
+transitions = ["Start", "KayKit Animated Character|Idle", SubResource("AnimationNodeStateMachineTransition_gor3g"), "KayKit Animated Character|Idle", "End", SubResource("AnimationNodeStateMachineTransition_xywv6")]
+
+[node name="EnemyArcher" type="RigidBody3D"]
+collision_layer = 2
+collision_mask = 15
+axis_lock_linear_y = true
+axis_lock_angular_x = true
+axis_lock_angular_z = true
+script = ExtResource("1_2284y")
+
+[node name="EnemySkeletonArcher" parent="." instance=ExtResource("2_bc51o")]
+
+[node name="Skeleton3D" parent="EnemySkeletonArcher/RootNode/KayKit Animated Character" index="0"]
+bones/1/rotation = Quaternion(0.0554999, 1.16415e-10, 4.54747e-11, 0.998459)
+bones/2/rotation = Quaternion(0.682623, 0.184461, -0.682623, 0.184461)
+bones/3/rotation = Quaternion(-0.606617, 0.606617, -0.36334, -0.36334)
+bones/4/position = Vector3(-0.0014, 0.00691598, -1.03253e-11)
+bones/4/rotation = Quaternion(0.70152, -0.294038, -0.646339, -0.0604762)
+bones/5/rotation = Quaternion(0.300506, -0.376591, 0.679877, 0.55285)
+
+[node name="Body" parent="EnemySkeletonArcher/RootNode/KayKit Animated Character/Skeleton3D" index="1"]
+transform = Transform3D(1, -5.31714e-24, -8.66272e-31, 5.31714e-24, 1, 1.62921e-07, 1.88079e-37, -1.62921e-07, 1, 0, 0, 0)
+
+[node name="Head" parent="EnemySkeletonArcher/RootNode/KayKit Animated Character/Skeleton3D" index="2"]
+transform = Transform3D(1, -7.78872e-11, 2.37519e-10, 1.03731e-10, 0.993839, -0.110829, -2.27424e-10, 0.110829, 0.993839, -4.16185e-11, 0.00711598, -1.15125e-09)
+
+[node name="ArmLeft" parent="EnemySkeletonArcher/RootNode/KayKit Animated Character/Skeleton3D" index="3"]
+transform = Transform3D(1.02474e-30, 0.50367, -0.863896, -1.92723e-07, -0.863896, -0.50367, -1, 2.30153e-07, -3.71511e-08, 0.0014, 0.00691598, -1.17522e-09)
+
+[node name="ArmRight" parent="EnemySkeletonArcher/RootNode/KayKit Animated Character/Skeleton3D" index="4"]
+transform = Transform3D(-0.00842489, -0.490723, -0.871275, -0.334371, -0.819769, 0.464947, -0.942405, 0.295246, -0.157177, -0.0014, 0.00691598, -1.13708e-09)
+
+[node name="HandSlotLeft" parent="EnemySkeletonArcher/RootNode/KayKit Animated Character/Skeleton3D" index="5"]
+transform = Transform3D(-0.999339, 2.10244e-07, -0.036348, -0.0363481, 2.46305e-07, 0.99934, 9.70475e-08, 1, -2.1518e-07, 0.00417483, 0.00215658, 2.69701e-10)
+
+[node name="HandSlotRight" parent="EnemySkeletonArcher/RootNode/KayKit Animated Character/Skeleton3D" index="6"]
+transform = Transform3D(-0.974886, 0.216457, -0.0523829, 0.0224613, 0.329577, 0.943862, 0.22157, 0.918981, -0.326162, -0.0041035, 0.00239969, 0.00162657)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.765, 0, 0, 0, 0.765, 0, 0, 0, 0.765, 0, 0.754766, 0)
+shape = SubResource("SphereShape3D_cmmfk")
+
+[node name="DamageParticles" parent="." instance=ExtResource("3_ud721")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.57005, 0)
+
+[node name="AttackCooldown" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_37bnq")
+anim_player = NodePath("../EnemySkeletonArcher/AnimationPlayer")
+active = true
+root_motion_track = NodePath("RootNode/KayKit Animated Character/Skeleton3D:Body")
+
+[editable path="EnemySkeletonArcher"]

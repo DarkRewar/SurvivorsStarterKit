@@ -1,0 +1,125 @@
+[gd_scene load_steps=12 format=3 uid="uid://brnj7g14cjd0j"]
+
+[ext_resource type="Script" path="res://Scripts/Player.cs" id="1_xtb06"]
+[ext_resource type="PackedScene" uid="uid://cjgoeugpyg7n1" path="res://Prefabs/Powerups/shooting.tscn" id="3_h4lb3"]
+[ext_resource type="PackedScene" uid="uid://cr6nu73ixtmqt" path="res://Prefabs/Powerups/spirit_water.tscn" id="4_cm2ek"]
+[ext_resource type="PackedScene" uid="uid://cxsvig1irj1y5" path="res://Prefabs/Powerups/lifesteal.tscn" id="5_c6obf"]
+[ext_resource type="PackedScene" uid="uid://cry7wgh8tlrqd" path="res://Prefabs/Powerups/floating_sphere.tscn" id="6_eygic"]
+[ext_resource type="PackedScene" uid="uid://bjuqvgbfyhybk" path="res://addons/kaykit_characters/Mage.glb" id="8_fob2n"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fam3i"]
+animation = &"Walking_A"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4oeam"]
+animation = &"Idle"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_fkkp7"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_nf623"]
+nodes/Animation/node = SubResource("AnimationNodeAnimation_4oeam")
+nodes/Animation/position = Vector2(-280, 60)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_fam3i")
+"nodes/Animation 2/position" = Vector2(-280, 180)
+nodes/walking/node = SubResource("AnimationNodeBlend2_fkkp7")
+nodes/walking/position = Vector2(0, 100)
+node_connections = [&"output", 0, &"walking", &"walking", 0, &"Animation", &"walking", 1, &"Animation 2"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_adgmg"]
+
+[node name="Player" type="CharacterBody3D"]
+collision_mask = 9
+script = ExtResource("1_xtb06")
+Speed = 9.0
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, -7.57102e-08, 1.31134e-07, -7.57103e-08, 0.5, 0.866025, -1.31134e-07, -0.866025, 0.5, 0, 16.984, 8.711)
+size = 10.0
+far = 100.0
+
+[node name="Visual" parent="." instance=ExtResource("8_fob2n")]
+
+[node name="Skeleton3D" parent="Visual/Rig" index="0"]
+bones/1/position = Vector3(0, 0.385443, 0)
+bones/1/rotation = Quaternion(-1.11123e-10, 0.0431578, 2.57241e-09, 0.999068)
+bones/4/rotation = Quaternion(-0.55506, -0.063249, -0.655271, 0.508457)
+bones/5/rotation = Quaternion(1.81521e-08, -6.18507e-08, -0.476168, 0.879354)
+bones/7/rotation = Quaternion(-0.317538, -0.326385, 0.135617, 0.879915)
+bones/8/rotation = Quaternion(0.00148658, 0.00148657, -0.701628, 0.712541)
+bones/11/rotation = Quaternion(-0.614273, 0.0831884, 0.628089, 0.470375)
+bones/12/rotation = Quaternion(-1.18658e-09, 5.08243e-08, 0.500245, 0.865884)
+bones/14/rotation = Quaternion(-0.315923, 0.300557, -0.217231, 0.873309)
+bones/15/rotation = Quaternion(0.00316111, 0.00372333, 0.703815, 0.710367)
+bones/18/rotation = Quaternion(-5.80608e-11, -0.0313417, -1.88012e-09, 0.999509)
+bones/21/rotation = Quaternion(0.992879, 0.0831757, 0.07555, 0.0395715)
+bones/22/rotation = Quaternion(0.270172, 6.4951e-08, -1.8884e-07, 0.962812)
+bones/23/rotation = Quaternion(-0.556329, -0.207008, 0.0552588, 0.802865)
+bones/25/rotation = Quaternion(0.99573, -0.0306966, 0.0309463, 0.0813798)
+bones/26/rotation = Quaternion(0.33144, -6.24996e-08, 2.30205e-07, 0.943476)
+bones/27/rotation = Quaternion(-0.589608, 0.11405, -0.0134887, 0.799483)
+bones/28/rotation = Quaternion(3.04791e-08, 0.920355, -0.391084, -6.94849e-08)
+bones/29/rotation = Quaternion(0.707107, -2.29302e-07, -4.60552e-08, 0.707107)
+bones/30/position = Vector3(0.202182, 0.0259903, 0.205181)
+bones/30/rotation = Quaternion(-0.707107, -7.05285e-08, -7.05285e-08, 0.707107)
+bones/31/rotation = Quaternion(9.65792e-09, 1.77955e-09, 0.985719, -0.168398)
+bones/32/rotation = Quaternion(-1.04035e-07, 0.391084, 0.920355, -2.9526e-08)
+bones/34/rotation = Quaternion(1, -3.10863e-15, 1.94707e-07, -6.91739e-22)
+bones/36/rotation = Quaternion(0.707107, -3.82385e-08, 1.45009e-07, 0.707107)
+bones/37/rotation = Quaternion(-0.707107, -7.05285e-08, -7.05285e-08, 0.707107)
+bones/38/rotation = Quaternion(-5.83589e-09, 6.43837e-10, 0.994809, 0.101756)
+bones/39/rotation = Quaternion(-1.04035e-07, 0.391084, 0.920355, -2.95261e-08)
+bones/44/position = Vector3(0.520841, 0.774341, -0.0576374)
+bones/44/rotation = Quaternion(0.794627, -1.11759e-07, 0.607098, -5.96046e-08)
+bones/46/position = Vector3(-0.510844, 0.774341, 0.0597369)
+bones/46/rotation = Quaternion(-0.758253, -1.52737e-07, 0.651961, -1.11759e-08)
+
+[node name="Spellbook" parent="Visual/Rig/Skeleton3D" index="0"]
+transform = Transform3D(-2.29647e-06, 0.964832, 0.262866, -0.999871, 0.00420248, -0.0154328, -0.0159949, -0.262832, 0.964708, 0.577376, 0.617884, 0.236477)
+bone_idx = 9
+
+[node name="Spellbook_open" parent="Visual/Rig/Skeleton3D" index="1"]
+transform = Transform3D(-2.29647e-06, 0.964832, 0.262866, -0.999871, 0.00420248, -0.0154328, -0.0159949, -0.262832, 0.964708, 0.54574, 0.619741, 0.120373)
+bone_idx = 10
+
+[node name="1H_Wand" parent="Visual/Rig/Skeleton3D" index="2"]
+transform = Transform3D(-0.00222094, -0.159504, 0.987194, 0.999956, -0.00926892, 0.000751688, 0.00903073, 0.987153, 0.159518, -0.49105, 0.626081, 0.105256)
+bone_idx = 16
+
+[node name="2H_Staff" parent="Visual/Rig/Skeleton3D" index="3"]
+transform = Transform3D(-0.00222094, -0.159504, 0.987194, 0.999956, -0.00926892, 0.000751688, 0.00903073, 0.987153, 0.159518, -0.49105, 0.626081, 0.105256)
+bone_idx = 17
+
+[node name="Mage_Hat" parent="Visual/Rig/Skeleton3D" index="4"]
+transform = Transform3D(0.99972, -0.00612025, 0.0228411, 1.39343e-09, 0.965926, 0.258819, -0.0236468, -0.258747, 0.965656, -7.48423e-09, 1.76388, -1.02479e-07)
+bone_idx = 19
+
+[node name="Mage_Cape" parent="Visual/Rig/Skeleton3D" index="5"]
+transform = Transform3D(0.996275, -5.14962e-09, 0.0862354, 5.13044e-09, 1, 4.44078e-10, -0.0862354, 1.47756e-15, 0.996275, -1.2997e-08, 1.19565, -1.01951e-07)
+bone_idx = 20
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeBlendTree_nf623")
+anim_player = NodePath("../Visual/AnimationPlayer")
+active = true
+root_motion_track = NodePath("Rig/Skeleton3D:root")
+parameters/walking/blend_amount = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_adgmg")
+
+[node name="AttackCooldown" type="Timer" parent="."]
+autostart = true
+
+[node name="Shooting" parent="." instance=ExtResource("3_h4lb3")]
+BulletSpeed = 5.0
+
+[node name="SpiritWater" parent="." instance=ExtResource("4_cm2ek")]
+
+[node name="Lifesteal" parent="." instance=ExtResource("5_c6obf")]
+
+[node name="FloatingSphere" parent="." instance=ExtResource("6_eygic")]
+SphereDistance = 4.0
+
+[connection signal="timeout" from="AttackCooldown" to="." method="OnAttackTimeOut"]
+
+[editable path="Visual"]

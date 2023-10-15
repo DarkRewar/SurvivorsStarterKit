@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ckl2r4pvmil6f"
+path="res://.godot/imported/candle.obj-7962799d0569558d251b558a4bed5f47.mesh"
+
+[deps]
+
+files=["res://.godot/imported/candle.obj-7962799d0569558d251b558a4bed5f47.mesh"]
+
+source_file="res://addons/kaykit_dungeon_remastered/Assets/obj/candle.obj"
+dest_files=["res://.godot/imported/candle.obj-7962799d0569558d251b558a4bed5f47.mesh", "res://.godot/imported/candle.obj-7962799d0569558d251b558a4bed5f47.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

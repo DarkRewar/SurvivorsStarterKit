@@ -1,0 +1,95 @@
+[gd_scene load_steps=14 format=3 uid="uid://ceud3brqa3ivb"]
+
+[ext_resource type="ArrayMesh" uid="uid://b6n7ma3xo2sq5" path="res://addons/kaykit_dungeon_remastered/Assets/obj/floor_dirt_large.obj" id="1_0tmdh"]
+[ext_resource type="Material" uid="uid://pwt7hdhjhmb6" path="res://addons/kaykit_dungeon_remastered/Assets/texture/kaylousberg_dungeon_material.tres" id="2_of516"]
+[ext_resource type="ArrayMesh" uid="uid://bnuh0tcus5vft" path="res://addons/kaykit_dungeon_remastered/Assets/obj/floor_dirt_large_rocky.obj" id="2_pobyp"]
+[ext_resource type="ArrayMesh" uid="uid://c0ouf7qs7edrg" path="res://addons/kaykit_dungeon_remastered/Assets/obj/floor_tile_big_grate.obj" id="4_sltmh"]
+[ext_resource type="ArrayMesh" uid="uid://yyvrn06w7kra" path="res://addons/kaykit_dungeon_remastered/Assets/obj/floor_tile_big_grate_open.obj" id="5_r82x1"]
+[ext_resource type="ArrayMesh" uid="uid://cbo7co8ue71gj" path="res://addons/kaykit_dungeon_remastered/Assets/obj/floor_tile_big_spikes.obj" id="6_2ka4b"]
+[ext_resource type="ArrayMesh" uid="uid://mfesocmexa4i" path="res://addons/kaykit_dungeon_remastered/Assets/obj/floor_tile_large.obj" id="7_frjxa"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5wwbe"]
+size = Vector3(4, 0.1, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lrsdv"]
+size = Vector3(4, 0.1, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_be3wx"]
+size = Vector3(4, 0.1, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jmpru"]
+size = Vector3(4, 0.1, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tct4s"]
+size = Vector3(4, 0.1, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h2je4"]
+size = Vector3(4, 0.1, 4)
+
+[node name="kaylousberg_dungeon_scene" type="Node3D"]
+
+[node name="FloorDirtLarge" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_0tmdh")
+surface_material_override/0 = ExtResource("2_of516")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="FloorDirtLarge"]
+disable_mode = 1
+collision_layer = 8
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FloorDirtLarge/StaticBody3D"]
+shape = SubResource("BoxShape3D_5wwbe")
+
+[node name="FloorDirtLargeRocky" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+mesh = ExtResource("2_pobyp")
+surface_material_override/0 = ExtResource("2_of516")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="FloorDirtLargeRocky"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FloorDirtLargeRocky/StaticBody3D"]
+shape = SubResource("BoxShape3D_lrsdv")
+
+[node name="FloorTileBigGrate" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+mesh = ExtResource("4_sltmh")
+surface_material_override/0 = ExtResource("2_of516")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="FloorTileBigGrate"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FloorTileBigGrate/StaticBody3D"]
+shape = SubResource("BoxShape3D_be3wx")
+
+[node name="FloorTileBigGrateOpen" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -4)
+mesh = ExtResource("5_r82x1")
+surface_material_override/0 = ExtResource("2_of516")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="FloorTileBigGrateOpen"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FloorTileBigGrateOpen/StaticBody3D"]
+shape = SubResource("BoxShape3D_jmpru")
+
+[node name="FloorTileBigSpikes" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -4)
+mesh = ExtResource("6_2ka4b")
+surface_material_override/0 = ExtResource("2_of516")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="FloorTileBigSpikes"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FloorTileBigSpikes/StaticBody3D"]
+shape = SubResource("BoxShape3D_tct4s")
+
+[node name="FloorTileLarge" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
+mesh = ExtResource("7_frjxa")
+surface_material_override/0 = ExtResource("2_of516")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="FloorTileLarge"]
+disable_mode = 1
+collision_layer = 8
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FloorTileLarge/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.005, 0)
+shape = SubResource("BoxShape3D_h2je4")

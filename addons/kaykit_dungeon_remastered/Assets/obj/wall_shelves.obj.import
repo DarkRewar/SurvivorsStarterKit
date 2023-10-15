@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dm73km8nqav3f"
+path="res://.godot/imported/wall_shelves.obj-0f782e860cfeb7061bc7d08d52dcc987.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wall_shelves.obj-0f782e860cfeb7061bc7d08d52dcc987.mesh"]
+
+source_file="res://addons/kaykit_dungeon_remastered/Assets/obj/wall_shelves.obj"
+dest_files=["res://.godot/imported/wall_shelves.obj-0f782e860cfeb7061bc7d08d52dcc987.mesh", "res://.godot/imported/wall_shelves.obj-0f782e860cfeb7061bc7d08d52dcc987.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

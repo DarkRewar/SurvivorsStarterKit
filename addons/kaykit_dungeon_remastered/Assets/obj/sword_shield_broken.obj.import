@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://1q42awq76xvo"
+path="res://.godot/imported/sword_shield_broken.obj-8611f98d1a917816a4829c1a4d7adea8.mesh"
+
+[deps]
+
+files=["res://.godot/imported/sword_shield_broken.obj-8611f98d1a917816a4829c1a4d7adea8.mesh"]
+
+source_file="res://addons/kaykit_dungeon_remastered/Assets/obj/sword_shield_broken.obj"
+dest_files=["res://.godot/imported/sword_shield_broken.obj-8611f98d1a917816a4829c1a4d7adea8.mesh", "res://.godot/imported/sword_shield_broken.obj-8611f98d1a917816a4829c1a4d7adea8.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

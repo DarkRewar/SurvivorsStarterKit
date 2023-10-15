@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://b3rm7ghuxlu71"]
+
+[ext_resource type="Material" uid="uid://ctvkxwff307np" path="res://Objects/Materials/enemy.tres" id="1_0o4q7"]
+
+[sub_resource type="Curve" id="Curve_ol8q6"]
+_data = [Vector2(0, 0), 0.0, 8.84211, 0, 0, Vector2(0.356481, 0.957895), 0.0, 0.0, 0, 0, Vector2(1, 0), -4.13927, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_v0jd0"]
+curve = SubResource("Curve_ol8q6")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_cv80f"]
+emission_shape = 2
+emission_sphere_radius = 0.45
+direction = Vector3(0, 0, 0)
+flatness = 0.35
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 0.25
+initial_velocity_max = 0.35
+scale_min = 0.35
+scale_max = 0.35
+scale_curve = SubResource("CurveTexture_v0jd0")
+
+[sub_resource type="SphereMesh" id="SphereMesh_40akb"]
+material = ExtResource("1_0o4q7")
+height = 0.6
+radial_segments = 8
+rings = 4
+is_hemisphere = true
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_kay54"]
+
+[node name="FloatingSphereProjectile" type="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.316, 0)
+collision_layer = 4
+collision_mask = 2
+
+[node name="Visual" type="CSGSphere3D" parent="."]
+material = ExtResource("1_0o4q7")
+
+[node name="Particles" type="GPUParticles3D" parent="."]
+amount = 32
+lifetime = 0.5
+process_material = SubResource("ParticleProcessMaterial_cv80f")
+draw_pass_1 = SubResource("SphereMesh_40akb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_kay54")

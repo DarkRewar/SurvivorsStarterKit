@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://pwt7hdhjhmb6"]
+
+[ext_resource type="Texture2D" uid="uid://df5r3kqen7jea" path="res://addons/kaykit_dungeon_remastered/Assets/texture/dungeon_texture.png" id="1_jlyvs"]
+
+[resource]
+albedo_texture = ExtResource("1_jlyvs")
+metallic_specular = 1.0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://mr8n4lbdpgm8"
+path="res://.godot/imported/keyring.obj-f3eb282367b8939ad671df4d340fcebe.mesh"
+
+[deps]
+
+files=["res://.godot/imported/keyring.obj-f3eb282367b8939ad671df4d340fcebe.mesh"]
+
+source_file="res://addons/kaykit_dungeon_remastered/Assets/obj/keyring.obj"
+dest_files=["res://.godot/imported/keyring.obj-f3eb282367b8939ad671df4d340fcebe.mesh", "res://.godot/imported/keyring.obj-f3eb282367b8939ad671df4d340fcebe.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

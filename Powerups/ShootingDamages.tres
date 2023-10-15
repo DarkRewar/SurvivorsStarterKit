@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Powerup" load_steps=2 format=3 uid="uid://ci5siv3oubwiw"]
+
+[ext_resource type="Script" path="res://Scripts/Powerup.cs" id="1_s26v3"]
+
+[resource]
+script = ExtResource("1_s26v3")
+Type = 0
+Name = "Tir - Dégâts+"
+Description = "Augmente les dégâts des balles: +5% (+{0}%)"
+IsCumulable = true
+MaxCumul = 6

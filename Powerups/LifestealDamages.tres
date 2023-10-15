@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Powerup" load_steps=2 format=3 uid="uid://c7tgulrt23ks3"]
+
+[ext_resource type="Script" path="res://Scripts/Powerup.cs" id="1_7q2bj"]
+
+[resource]
+script = ExtResource("1_7q2bj")
+Type = 5
+Name = "Vol de vie - Dégâts+"
+Description = "Augmente les dégâts: +5% (+{0}%)"
+IsCumulable = true
+MaxCumul = 6

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://byfndwi2ph7va"
+path="res://.godot/imported/banner_patternA_green.obj-fdcc122efe462c15edb92d8e876bae64.mesh"
+
+[deps]
+
+files=["res://.godot/imported/banner_patternA_green.obj-fdcc122efe462c15edb92d8e876bae64.mesh"]
+
+source_file="res://addons/kaykit_dungeon_remastered/Assets/obj/banner_patternA_green.obj"
+dest_files=["res://.godot/imported/banner_patternA_green.obj-fdcc122efe462c15edb92d8e876bae64.mesh", "res://.godot/imported/banner_patternA_green.obj-fdcc122efe462c15edb92d8e876bae64.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

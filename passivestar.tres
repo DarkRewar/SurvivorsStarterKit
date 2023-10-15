@@ -1,0 +1,119 @@
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://d1fky0j1pu67r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6h42l"]
+content_margin_left = 10.5
+content_margin_top = 8.75
+content_margin_right = 10.5
+content_margin_bottom = 8.75
+bg_color = Color(0.116078, 0.116078, 0.116078, 1)
+draw_center = false
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 0.137255)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 3
+anti_aliasing = false
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_lu5el"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ne7v8"]
+content_margin_left = 10.5
+content_margin_top = 8.75
+content_margin_right = 10.5
+content_margin_bottom = 8.75
+bg_color = Color(0.116078, 0.116078, 0.116078, 1)
+draw_center = false
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.35, 0.35, 0.35, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 5
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0nfa3"]
+content_margin_left = 10.5
+content_margin_top = 7.0
+content_margin_right = 10.5
+content_margin_bottom = 8.75
+bg_color = Color(0.116078, 0.116078, 0.116078, 1)
+border_color = Color(0.101569, 0.101569, 0.101569, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 5
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e4crt"]
+content_margin_left = 10.5
+content_margin_top = 7.0
+content_margin_right = 10.5
+content_margin_bottom = 8.75
+bg_color = Color(0.130588, 0.130588, 0.130588, 1)
+border_color = Color(0.101569, 0.101569, 0.101569, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 5
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ohhmf"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(1, 1, 1, 0.0392157)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_20eiv"]
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8atl4"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_s752x"]
+
+[resource]
+EditorStyles/styles/FocusViewport = SubResource("StyleBoxFlat_6h42l")
+HSplitContainer/constants/autohide = 1
+HSplitContainer/constants/minimum_grab_thickness = 6
+HSplitContainer/constants/separation = 4
+HSplitContainer/icons/grabber = SubResource("PlaceholderTexture2D_lu5el")
+LineEdit/colors/font_placeholder_color = Color(1, 1, 1, 0.196078)
+LineEdit/styles/focus = SubResource("StyleBoxFlat_ne7v8")
+LineEdit/styles/normal = SubResource("StyleBoxFlat_0nfa3")
+LineEdit/styles/read_only = SubResource("StyleBoxFlat_e4crt")
+MarginContainer/constants/margin_bottom = 0
+MarginContainer/constants/margin_left = 0
+MarginContainer/constants/margin_right = 0
+MarginContainer/constants/margin_top = 0
+TabContainer/styles/panel = SubResource("StyleBoxFlat_ohhmf")
+Tree/colors/children_hl_line_color = Color(0.270588, 0.270588, 0.270588, 1)
+Tree/colors/font_color = Color(1, 1, 1, 0.627451)
+Tree/colors/parent_hl_line_color = Color(0.270588, 0.270588, 0.270588, 1)
+Tree/constants/v_separation = 1
+Tree/styles/focus = SubResource("StyleBoxFlat_20eiv")
+Tree/styles/panel = SubResource("StyleBoxEmpty_8atl4")
+VSplitContainer/constants/autohide = 1
+VSplitContainer/constants/minimum_grab_thickness = 6
+VSplitContainer/constants/separation = 4
+VSplitContainer/icons/grabber = SubResource("PlaceholderTexture2D_s752x")

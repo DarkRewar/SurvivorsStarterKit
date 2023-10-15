@@ -1,0 +1,17 @@
+# Created by Kenney (www.kenney.nl)
+
+newmtl grey
+Kd 0.5254902 0.5450979 0.6313726
+
+newmtl brown
+Kd 0.8392157 0.5254902 0.3568627
+
+newmtl beige
+Kd 0.9490196 0.7490196 0.6
+
+newmtl dark
+Kd 0.2196078 0.2196078 0.2392156
+
+newmtl default
+Kd 1 1 1
+

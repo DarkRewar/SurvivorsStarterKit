@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b55f8urnko4ha"
+path="res://.godot/imported/stairs_wood_decorated.obj-7c7269a7d8dbe080c37d20b4fdcf66ad.mesh"
+
+[deps]
+
+files=["res://.godot/imported/stairs_wood_decorated.obj-7c7269a7d8dbe080c37d20b4fdcf66ad.mesh"]
+
+source_file="res://addons/kaykit_dungeon_remastered/Assets/obj/stairs_wood_decorated.obj"
+dest_files=["res://.godot/imported/stairs_wood_decorated.obj-7c7269a7d8dbe080c37d20b4fdcf66ad.mesh", "res://.godot/imported/stairs_wood_decorated.obj-7c7269a7d8dbe080c37d20b4fdcf66ad.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

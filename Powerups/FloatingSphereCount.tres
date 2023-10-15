@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Powerup" load_steps=2 format=3 uid="uid://38285qtn83ph"]
+
+[ext_resource type="Script" path="res://Scripts/Powerup.cs" id="1_bv5wg"]
+
+[resource]
+script = ExtResource("1_bv5wg")
+Type = 3
+Name = "Plus de sphères"
+Description = "Ajoute une sphère supplémentaire qui tournoie autour du joueur."
+IsCumulable = true
+MaxCumul = 6

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cry7wgh8tlrqd"]
+
+[ext_resource type="Script" path="res://Scripts/Players/FloatingSphereAttack.cs" id="1_syllj"]
+[ext_resource type="PackedScene" uid="uid://b3rm7ghuxlu71" path="res://Prefabs/Powerups/floating_sphere_projectile.tscn" id="2_we4yo"]
+
+[node name="FloatingSphere" type="Node3D"]
+script = ExtResource("1_syllj")
+Damages = 2
+RotationSpeed = 5.0
+_spherePrefab = ExtResource("2_we4yo")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true

@@ -1,0 +1,15 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://j2hx44ynhvq0"]
+
+[ext_resource type="Shader" uid="uid://cp32e4fj4hbw5" path="res://Objects/Shaders/LifestealAOE.tres" id="1_gi6uy"]
+[ext_resource type="Texture2D" uid="uid://dlsoh2ifwrm4e" path="res://Objects/Textures/Patterns/pattern_49.png" id="2_v0ksk"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_gi6uy")
+shader_parameter/ScrollSpeed = 0.2
+shader_parameter/PatternScale = 2.0
+shader_parameter/MainColor = Color(0.898039, 0.223529, 0, 1)
+shader_parameter/RimWidth = 0.23
+shader_parameter/Emission = 0.48
+shader_parameter/RimTint = 1.0
+shader_parameter/Pattern = ExtResource("2_v0ksk")

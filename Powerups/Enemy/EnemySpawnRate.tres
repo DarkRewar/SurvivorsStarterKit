@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="StatEnemyPowerup" load_steps=2 format=3 uid="uid://dy6u6qcxkjicj"]
+
+[ext_resource type="Script" path="res://Scripts/StatEnemyPowerup.cs" id="1_7bhat"]
+
+[resource]
+script = ExtResource("1_7bhat")
+Value = 1.0
+Name = "Monstres kamikazes"
+Description = "Les monstres ont une chance d'exploser quand ils meurent ({0}% de chance d'exploser)"
+MaxStack = 5
+Type = 103

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b31mmvulcyxud"
+path="res://.godot/imported/plate_small.obj-65587596cd0af3c8365effaa4c3860e0.mesh"
+
+[deps]
+
+files=["res://.godot/imported/plate_small.obj-65587596cd0af3c8365effaa4c3860e0.mesh"]
+
+source_file="res://addons/kaykit_dungeon_remastered/Assets/obj/plate_small.obj"
+dest_files=["res://.godot/imported/plate_small.obj-65587596cd0af3c8365effaa4c3860e0.mesh", "res://.godot/imported/plate_small.obj-65587596cd0af3c8365effaa4c3860e0.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

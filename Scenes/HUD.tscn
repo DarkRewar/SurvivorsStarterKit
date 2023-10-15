@@ -1,0 +1,88 @@
+[gd_scene load_steps=4 format=3 uid="uid://ccwt5vlfksxqv"]
+
+[ext_resource type="Script" path="res://Scripts/UpgradeView.cs" id="1_6afn1"]
+[ext_resource type="PackedScene" uid="uid://bpb5p32e5r0ub" path="res://Prefabs/UI/lifebar.tscn" id="2_b3dd8"]
+[ext_resource type="PackedScene" uid="uid://oqbxhb2symxp" path="res://Prefabs/UI/powerup_block.tscn" id="2_cdj2w"]
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameTime" type="Label" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 40.0
+offset_right = 192.0
+offset_bottom = 143.0
+theme_override_font_sizes/font_size = 24
+text = "00:00"
+
+[node name="PlayerXPBar" type="ProgressBar" parent="."]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 27.0
+grow_horizontal = 2
+
+[node name="VoteTimeBar" type="ProgressBar" parent="."]
+process_mode = 3
+visible = false
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 27.0
+grow_horizontal = 2
+max_value = 30.0
+value = 30.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="VoteTimeBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Temps de vote restant : 30s"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerLifeBar" parent="." instance=ExtResource("2_b3dd8")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = 70.0
+offset_right = 40.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="UpgradeContainer" type="HBoxContainer" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 27.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+script = ExtResource("1_6afn1")
+
+[node name="PowerupBlock" parent="UpgradeContainer" instance=ExtResource("2_cdj2w")]
+layout_mode = 2
+
+[node name="PowerupBlock2" parent="UpgradeContainer" instance=ExtResource("2_cdj2w")]
+layout_mode = 2
+
+[node name="PowerupBlock3" parent="UpgradeContainer" instance=ExtResource("2_cdj2w")]
+layout_mode = 2

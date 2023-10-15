@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Powerup" load_steps=2 format=3 uid="uid://8y74ewu1fcm3"]
+
+[ext_resource type="Script" path="res://Scripts/Powerup.cs" id="1_5y3e5"]
+
+[resource]
+script = ExtResource("1_5y3e5")
+Type = 2
+Name = "Tir - Vitesse+"
+Description = "Augmente la vitesse des balles: +5% (+{0}%)"
+IsCumulable = true
+MaxCumul = 6

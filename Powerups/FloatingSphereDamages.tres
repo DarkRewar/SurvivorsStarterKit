@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Powerup" load_steps=2 format=3 uid="uid://ycnetkdi1g2o"]
+
+[ext_resource type="Script" path="res://Scripts/Powerup.cs" id="1_biw6f"]
+
+[resource]
+script = ExtResource("1_biw6f")
+Type = 4
+Name = "Sphère - Dégâts+"
+Description = "Les sphères flottantes font plus de dégâts."
+IsCumulable = true
+MaxCumul = 6

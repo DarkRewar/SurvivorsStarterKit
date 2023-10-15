@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cieeay6vucxmc"
+path="res://.godot/imported/torch_mounted.obj-974cbf58609abe7b80c9583f75ffccdd.mesh"
+
+[deps]
+
+files=["res://.godot/imported/torch_mounted.obj-974cbf58609abe7b80c9583f75ffccdd.mesh"]
+
+source_file="res://addons/kaykit_dungeon_remastered/Assets/obj/torch_mounted.obj"
+dest_files=["res://.godot/imported/torch_mounted.obj-974cbf58609abe7b80c9583f75ffccdd.mesh", "res://.godot/imported/torch_mounted.obj-974cbf58609abe7b80c9583f75ffccdd.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

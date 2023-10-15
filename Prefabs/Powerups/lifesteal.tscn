@@ -1,0 +1,69 @@
+[gd_scene load_steps=10 format=3 uid="uid://cxsvig1irj1y5"]
+
+[ext_resource type="Script" path="res://Scripts/Players/LifestealAttack.cs" id="1_ohiqa"]
+[ext_resource type="Material" uid="uid://c3477xk1avb8x" path="res://Objects/Materials/lifesteal_aoe.tres" id="2_q25fk"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_8ea1f"]
+
+[sub_resource type="Curve" id="Curve_vj842"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.27191, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.74441, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_22oe6"]
+curve = SubResource("Curve_vj842")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_a2ro3"]
+emission_shape = 6
+emission_ring_axis = Vector3(2.08165e-12, 2.08165e-12, 2.08165e-12)
+emission_ring_height = 2.08165e-12
+emission_ring_radius = 1.0
+emission_ring_inner_radius = 0.75
+direction = Vector3(2.08165e-12, 2.08165e-12, 2.08165e-12)
+gravity = Vector3(2.08165e-12, 1, 2.08165e-12)
+initial_velocity_max = 0.1
+radial_accel_min = -1.0
+radial_accel_max = -0.3
+scale_min = 0.03
+scale_max = 0.1
+scale_curve = SubResource("CurveTexture_22oe6")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1s7rt"]
+albedo_color = Color(0, 0.427451, 1, 1)
+emission_enabled = true
+emission = Color(0, 0.454902, 0.898039, 1)
+emission_energy_multiplier = 1.5
+
+[sub_resource type="QuadMesh" id="QuadMesh_4d10s"]
+material = SubResource("StandardMaterial3D_1s7rt")
+orientation = 1
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_cw88w"]
+radius = 0.479072
+
+[node name="Lifesteal" type="Node3D"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+script = ExtResource("1_ohiqa")
+Cooldown = 1.0
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 0.01, 2.08165e-12)
+mesh = SubResource("PlaneMesh_8ea1f")
+material = ExtResource("2_q25fk")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+amount = 100
+lifetime = 2.0
+process_material = SubResource("ParticleProcessMaterial_a2ro3")
+draw_pass_1 = SubResource("QuadMesh_4d10s")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(2.03, 0, 0, 0, 2.03, 0, 0, 0, 2.03, 0, 0, 0)
+shape = SubResource("SphereShape3D_cw88w")

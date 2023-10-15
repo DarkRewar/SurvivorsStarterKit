@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=3 uid="uid://88xru8fli1u"]
+
+[ext_resource type="Material" uid="uid://j2hx44ynhvq0" path="res://Objects/Materials/spirit_water.tres" id="1_c3agf"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_v5y2m"]
+radius = 1.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_w8skb"]
+
+[sub_resource type="Curve" id="Curve_7oot0"]
+_data = [Vector2(0, 0), 0.0, 5.06411, 0, 0, Vector2(0.5, 0.936842), 0.0, 0.0, 0, 0, Vector2(1, 0), -5.42186, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_gaj4c"]
+curve = SubResource("Curve_7oot0")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wcytu"]
+emission_shape = 6
+emission_ring_axis = Vector3(0, 1, 0)
+emission_ring_height = 0.0
+emission_ring_radius = 1.0
+emission_ring_inner_radius = 0.325
+direction = Vector3(1, 1, 1)
+flatness = 1.0
+gravity = Vector3(0, 0.65, 0)
+scale_curve = SubResource("CurveTexture_gaj4c")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ox301"]
+albedo_color = Color(0.921569, 0.117647, 0.0941176, 1)
+emission = Color(0.772549, 0, 0, 1)
+emission_energy_multiplier = 1.41
+rim_enabled = true
+rim = 0.59
+rim_tint = 0.39
+
+[sub_resource type="SphereMesh" id="SphereMesh_g1kig"]
+material = SubResource("StandardMaterial3D_ox301")
+radius = 0.1
+height = 0.2
+
+[node name="SpiritWaterProjectile" type="Area3D"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_v5y2m")
+
+[node name="Visual" type="CSGMesh3D" parent="."]
+mesh = SubResource("PlaneMesh_w8skb")
+material = ExtResource("1_c3agf")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Visual"]
+amount = 50
+visibility_aabb = AABB(-1, -1, -1, 2, 2, 2)
+process_material = SubResource("ParticleProcessMaterial_wcytu")
+draw_pass_1 = SubResource("SphereMesh_g1kig")

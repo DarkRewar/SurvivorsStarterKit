@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cr6nu73ixtmqt"]
+
+[ext_resource type="PackedScene" uid="uid://88xru8fli1u" path="res://Prefabs/Powerups/spirit_water_projectile.tscn" id="1_kp6ue"]
+[ext_resource type="Script" path="res://Scripts/Players/SpiritWater.cs" id="1_wpm03"]
+
+[node name="SpiritWater" type="Node3D"]
+script = ExtResource("1_wpm03")
+ProjectileRange = 6.0
+ProjectilePrefab = ExtResource("1_kp6ue")
+
+[node name="ProjectileCooldown" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="DamageCooldown" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true

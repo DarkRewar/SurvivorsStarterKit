@@ -1,0 +1,13 @@
+# Blender MTL File: 'Dungeon_Remastered_Export1.0.blend'
+# Material Count: 1
+
+newmtl texture
+Ns 272.250012
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.0 0.0 0.0
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\Kay Lousberg\\Desktop\\Work\\Gameassets\\Kay Lousberg Assets\\KayKit\\Master Maker Files\\2023 Remake - Textured\\3. Dungeon Asset Pack\\Export Files\\export 1.0\\standard\\texture\\dungeon_texture.png

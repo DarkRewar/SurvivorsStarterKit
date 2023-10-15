@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cf55via5i2oy8"
+path="res://.godot/imported/stairs_narrow.obj-382b1ddc954b7acb9e47a71d47b4e2ca.mesh"
+
+[deps]
+
+files=["res://.godot/imported/stairs_narrow.obj-382b1ddc954b7acb9e47a71d47b4e2ca.mesh"]
+
+source_file="res://addons/kaykit_dungeon_remastered/Assets/obj/stairs_narrow.obj"
+dest_files=["res://.godot/imported/stairs_narrow.obj-382b1ddc954b7acb9e47a71d47b4e2ca.mesh", "res://.godot/imported/stairs_narrow.obj-382b1ddc954b7acb9e47a71d47b4e2ca.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

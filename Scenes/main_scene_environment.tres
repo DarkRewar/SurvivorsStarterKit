@@ -1,0 +1,22 @@
+[gd_resource type="Environment" load_steps=3 format=3 uid="uid://ug40v7bvaqbt"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wxpjc"]
+
+[sub_resource type="Sky" id="Sky_3ji5g"]
+sky_material = SubResource("ProceduralSkyMaterial_wxpjc")
+
+[resource]
+background_mode = 2
+sky = SubResource("Sky_3ji5g")
+reflected_light_source = 2
+tonemap_mode = 3
+tonemap_exposure = 0.7
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
+glow_hdr_threshold = 0.4
+glow_hdr_scale = 1.1
+adjustment_enabled = true
+adjustment_contrast = 1.09
+adjustment_saturation = 1.13
