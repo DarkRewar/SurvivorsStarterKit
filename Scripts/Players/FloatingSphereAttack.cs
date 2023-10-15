@@ -122,7 +122,6 @@ public partial class FloatingSphereAttack : Node3D, IUpgradable
                 _damagesBonus += 1;
                 break;
             default: break;
-
         }
     }
 }

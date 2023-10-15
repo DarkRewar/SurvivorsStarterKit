@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Powerup" load_steps=2 format=3 uid="uid://kjtpiv7q4qy8"]
 
-[ext_resource type="Script" path="res://Scripts/Powerup.cs" id="1_5itmx"]
+[ext_resource type="Script" path="res://Scripts/Players/Powerup.cs" id="1_5itmx"]
 
 [resource]
 script = ExtResource("1_5itmx")

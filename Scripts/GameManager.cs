@@ -22,12 +22,8 @@ public partial class GameManager : Node
     private int _maxPlayerXP = 5;
 
     private bool _isVotePhase = false;
-    private Dictionary<string, int> _playerVotes = new();
-    private Timer _voteTimer;
     private UpgradeView _upgradeView;
     private List<Choice> _currentVotes;
-    private ProgressBar _voteTimeBar;
-    private Label _voteTimeBarLabel;
     private List<Powerup> _powerups = new();
     private List<EnemyPowerup> _enemyPowerups = new();
     private Dictionary<PowerupType, int> _powerupsCount = new();
@@ -52,22 +48,9 @@ public partial class GameManager : Node
         _gameTimeLabel = GetNode<Label>("/root/MainScene/HUD/GameTime");
         _playerXpBar = GetNode<ProgressBar>("/root/MainScene/HUD/PlayerXPBar");
         _playerXpBar.MaxValue = _maxPlayerXP;
-        _voteTimeBar = GetNode<ProgressBar>("/root/MainScene/HUD/VoteTimeBar");
-        _voteTimeBar.MaxValue = VoteTime;
-        _voteTimeBarLabel = _voteTimeBar.GetNode<Label>("Label");
 
         _upgradeView = GetNode<UpgradeView>("/root/MainScene/HUD/UpgradeContainer");
         _upgradeView.OnChoose += OnChoose;
-
-        _voteTimer = new()
-        {
-            OneShot = true,
-            Autostart = false,
-            WaitTime = 10,
-            ProcessMode = ProcessModeEnum.Always
-        };
-        _voteTimer.Timeout += OnVoteFinished;
-        AddChild(_voteTimer);
 
         LoadPowerups();
         LoadEnemyPowerups();
@@ -77,13 +60,7 @@ public partial class GameManager : Node
     {
         base._Process(delta);
 
-        if (_isVotePhase)
-        {
-            _voteTimeBar.Value = _voteTimer.TimeLeft;
-            _voteTimeBarLabel.Text = $"Temps de vote restant : {_voteTimer.TimeLeft:0}sec.";
-
-            return;
-        }
+        if (_isVotePhase) return;
 
         // Debug thing
         if (Input.IsActionJustPressed("SpawnBoss"))
@@ -161,10 +138,6 @@ public partial class GameManager : Node
     private void DisplayPowerups()
     {
         _isVotePhase = true;
-        _playerVotes.Clear();
-        _voteTimer.Start(VoteTime);
-        _playerXpBar.Hide();
-        _voteTimeBar.Show();
 
         List<Powerup> powerupChoices = _powerups.Where(p => _powerupsCount[p.Type] < p.MaxCumul)
             .OrderBy(_ => GD.Randf())
@@ -183,34 +156,8 @@ public partial class GameManager : Node
         _upgradeView.SetChoices(_currentVotes);
     }
 
-    private void OnVoteFinished()
-    {
-        List<(int choice, int count)> votes = new(){
-            (1, _playerVotes.Values.Count(x => x == 1)),
-            (2, _playerVotes.Values.Count(x => x == 2)),
-            (3, _playerVotes.Values.Count(x => x == 3))
-        };
-        votes = votes.OrderByDescending(vote => vote.count).ToList();
-
-        int choice = votes[0].choice;
-        if (votes[1].count == votes[0].count && votes[0].count == votes[2].count)
-        {
-            choice = GD.RandRange(1, 3);
-        }
-        else if (votes[1].count == votes[0].count)
-        {
-            choice = votes[GD.RandRange(0, 1)].choice;
-        }
-
-        OnChoose(_currentVotes[choice - 1]);
-
-        _isVotePhase = false;
-        _voteTimer.Stop();
-    }
-
     private async void OnChoose(Choice choice)
     {
-        _voteTimer.Stop();
         _upgradeView.DisplayChoicePicked(_currentVotes.IndexOf(choice) + 1);
 
         await Task.Delay(3000);
@@ -226,8 +173,6 @@ public partial class GameManager : Node
         _enemyPowerupsCount[choice.EnemyPowerup.Type]++;
 
         _isVotePhase = false;
-        _playerXpBar.Show();
-        _voteTimeBar.Hide();
 
         GetTree().Paused = false;
         _upgradeView.Clear();

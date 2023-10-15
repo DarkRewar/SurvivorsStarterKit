@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://b8pjhp6rqlwql"]
 
-[ext_resource type="Script" path="res://Scripts/Enemy.cs" id="1_1bryl"]
+[ext_resource type="Script" path="res://Scripts/Enemies/Enemy.cs" id="1_s25o6"]
 [ext_resource type="PackedScene" uid="uid://cwmfjf0u8d244" path="res://addons/kaykit_skeleton_pack/enemy_skeleton_mage.tscn" id="2_0bu1t"]
 [ext_resource type="PackedScene" uid="uid://dbch8185xjxrs" path="res://Prefabs/damage_particles.tscn" id="3_8y1vi"]
 
@@ -29,7 +29,7 @@ collision_mask = 15
 axis_lock_linear_y = true
 axis_lock_angular_x = true
 axis_lock_angular_z = true
-script = ExtResource("1_1bryl")
+script = ExtResource("1_s25o6")
 Lifepoints = 5
 Damages = 20
 Experience = 2
@@ -49,10 +49,10 @@ transform = Transform3D(8.66273e-31, 0.471937, -0.881632, -1.62921e-07, -0.88163
 transform = Transform3D(8.66273e-31, -0.471937, -0.881632, -1.62921e-07, -0.881632, 0.471937, -1, 1.43636e-07, -7.68882e-08, -0.0014, 0.00691598, -1.12676e-09)
 
 [node name="HandSlotLeft" parent="EnemySkeletonMage/RootNode/KayKit Animated Character/Skeleton3D" index="5"]
-transform = Transform3D(-1, -8.66273e-31, -5.96046e-07, -5.96046e-07, 1.62921e-07, 1, 9.23706e-14, 1, -1.62921e-07, 0.00400001, 0.00205887, -2.06943e-10)
+transform = Transform3D(-1, -8.66273e-31, -6.00062e-07, -5.90357e-07, 1.62921e-07, 1, 9.16573e-14, 1, -1.62921e-07, 0.00400001, 0.00205887, -2.06943e-10)
 
 [node name="HandSlotRight" parent="EnemySkeletonMage/RootNode/KayKit Animated Character/Skeleton3D" index="6"]
-transform = Transform3D(-1, -8.66273e-31, 5.96046e-07, 5.96046e-07, 1.62921e-07, 1, -9.23706e-14, 1, -1.62921e-07, -0.00400001, 0.00205887, -4.65818e-10)
+transform = Transform3D(-1, -8.66273e-31, 6.00062e-07, 5.90357e-07, 1.62921e-07, 1, -9.16573e-14, 1, -1.62921e-07, -0.00400001, 0.00205887, -4.65818e-10)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.765, 0, 0, 0, 0.765, 0, 0, 0, 0.765, 0, 0.754766, 0)

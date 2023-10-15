@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="StatEnemyPowerup" load_steps=2 format=3 uid="uid://dy6u6qcxkjicj"]
 
-[ext_resource type="Script" path="res://Scripts/StatEnemyPowerup.cs" id="1_7bhat"]
+[ext_resource type="Script" path="res://Scripts/Enemies/StatEnemyPowerup.cs" id="1_7bhat"]
 
 [resource]
 script = ExtResource("1_7bhat")
