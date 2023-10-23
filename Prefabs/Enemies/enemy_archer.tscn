@@ -35,31 +35,29 @@ script = ExtResource("1_10l82")
 
 [node name="Skeleton3D" parent="EnemySkeletonArcher/RootNode/KayKit Animated Character" index="0"]
 bones/0/rotation = Quaternion(-0.0348664, -0.00152229, -0.0435928, 0.99844)
-bones/1/rotation = Quaternion(0.0435779, 0.00190264, 0.0435779, 0.998097)
-bones/2/rotation = Quaternion(0.702449, 0.260074, -0.657542, 0.0810279)
-bones/3/rotation = Quaternion(-0.559559, 0.650179, -0.440204, -0.265294)
-bones/3/scale = Vector3(1, 1, 1)
-bones/4/position = Vector3(-0.0014, 0.00691598, -1.03253e-11)
-bones/4/rotation = Quaternion(0.702449, -0.260074, -0.657542, -0.0810279)
-bones/5/rotation = Quaternion(0.36334, -0.36334, 0.606617, 0.606617)
+bones/1/rotation = Quaternion(0.0498911, 0, 1.38334e-09, 0.998755)
+bones/2/rotation = Quaternion(0.684294, 0.178162, -0.684294, 0.178162)
+bones/3/rotation = Quaternion(-0.606617, 0.606617, -0.36334, -0.36334)
+bones/4/rotation = Quaternion(0.703381, -0.289758, -0.646602, -0.0565798)
+bones/5/rotation = Quaternion(0.300506, -0.376591, 0.679877, 0.55285)
 
 [node name="Body" parent="EnemySkeletonArcher/RootNode/KayKit Animated Character/Skeleton3D" index="1"]
-transform = Transform3D(0.996195, 0.0871558, 1.32713e-08, -0.0869434, 0.993768, 0.0697567, 0.00607968, -0.0694912, 0.997564, 0, 0, 0)
+transform = Transform3D(0.996195, 0.0871557, 1.72295e-08, -0.0869434, 0.993768, 0.0697567, 0.00607967, -0.0694912, 0.997564, 0, 0, 0)
 
 [node name="Head" parent="EnemySkeletonArcher/RootNode/KayKit Animated Character/Skeleton3D" index="2"]
-transform = Transform3D(1, 2.48246e-08, -1.07931e-09, -2.26639e-08, 0.999848, -0.0174522, 1.76107e-10, 0.0174522, 0.999848, 0.000620198, 0.00707163, -0.000494498)
+transform = Transform3D(0.996195, 0.0867218, -0.00868574, -0.0869434, 0.995773, -0.0296275, 0.00607967, 0.0302699, 0.999523, 0.000620198, 0.00707163, -0.000494498)
 
 [node name="ArmLeft" parent="EnemySkeletonArcher/RootNode/KayKit Animated Character/Skeleton3D" index="3"]
-transform = Transform3D(0.0225574, 0.395919, -0.918008, 0.189827, -0.903234, -0.384883, -0.981559, -0.16558, -0.0955305, 0.00199744, 0.00675116, -0.000472088)
+transform = Transform3D(-1.72295e-08, 0.409715, -0.912214, -0.0697568, -0.909992, -0.408717, -0.997565, 0.063633, 0.0285803, 0.00199744, 0.00675116, -0.000472088)
 
 [node name="ArmRight" parent="EnemySkeletonArcher/RootNode/KayKit Animated Character/Skeleton3D" index="4"]
-transform = Transform3D(-0.0225577, -0.544361, -0.838547, -0.324586, -0.789335, 0.521146, -0.945588, 0.283937, -0.158887, -0.000791905, 0.0069946, -0.000489111)
+transform = Transform3D(-0.0332429, -0.550923, -0.833894, -0.397749, -0.758144, 0.516734, -0.916893, 0.348858, -0.193926, -0.000791906, 0.0069946, -0.000489111)
 
 [node name="HandSlotLeft" parent="EnemySkeletonArcher/RootNode/KayKit Animated Character/Skeleton3D" index="5"]
-transform = Transform3D(-0.969805, 0.225802, 0.0921566, 0.0796333, -0.0639752, 0.994769, 0.230517, 0.972071, 0.0440619, 0.00417865, 0.00177504, -0.00138431)
+transform = Transform3D(-0.997597, 2.31953e-07, 0.0692883, 0.0691195, 0.0697568, 0.995167, -0.00483318, 0.997565, -0.0695891, 0.00425465, 0.00173781, -0.00012152)
 
 [node name="HandSlotRight" parent="EnemySkeletonArcher/RootNode/KayKit Animated Character/Skeleton3D" index="6"]
-transform = Transform3D(-0.996195, 0.0225581, 0.0841864, 0.086944, 0.324586, 0.941852, -0.00607937, 0.945588, -0.325312, -0.00379091, 0.00264597, 0.00107516)
+transform = Transform3D(-0.970511, 0.240335, 0.0186662, 0.110753, 0.37578, 0.920067, 0.214111, 0.895003, -0.391316, -0.00382706, 0.00281781, 0.00143282)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.765, 0, 0, 0, 0.765, 0, 0, 0, 0.765, 0, 0.754766, 0)

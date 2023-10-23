@@ -77,15 +77,15 @@ public partial class GameManager : Node
         if (_enemySpawnTimeLeft > 0) return;
         _enemySpawnTimeLeft = _enemyManager.SpawnDelay;
 
+        //int enemiesToSpawn = 15; // <-- This is a stress test value
+        int enemiesToSpawn = 1;
         if (_enemyManager.Enemies.Count <= 200)
         {
-            for (int i = 0; i < 15; ++i)
+            for (int i = 0; i < enemiesToSpawn; ++i)
             {
                 _enemyManager.SpawnEnemy();
             }
         }
-
-        //_enemyManager.SpawnEnemy();
     }
 
     //public override void _PhysicsProcess(double delta)

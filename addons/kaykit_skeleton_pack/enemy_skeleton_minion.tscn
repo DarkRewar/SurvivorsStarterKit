@@ -345,19 +345,18 @@ shadow_mesh = SubResource("ArrayMesh_7iesq")
 [node name="EnemySkeletonMinion" instance=ExtResource("1_3fdto")]
 
 [node name="Skeleton3D" parent="RootNode/KayKit Animated Character" index="0"]
-bones/0/rotation = Quaternion(-8.14603e-08, -2.16568e-31, 2.65857e-24, 1)
-bones/1/rotation = Quaternion(7.10543e-15, 7.4376e-38, 1.04675e-23, 1)
-bones/2/rotation = Quaternion(0.685863, 0.172023, -0.685863, 0.172023)
+bones/0/rotation = Quaternion(-0.0056369, -1.49861e-26, 2.65853e-24, 0.999984)
+bones/1/rotation = Quaternion(0.0526826, -8.0561e-20, -9.89129e-18, 0.998611)
+bones/2/rotation = Quaternion(0.683481, 0.181255, -0.683481, 0.181255)
 bones/3/rotation = Quaternion(-0.606617, 0.606617, -0.36334, -0.36334)
-bones/4/position = Vector3(-0.0014, 0.00691598, -1.05879e-24)
-bones/4/rotation = Quaternion(0.685863, -0.172023, -0.685863, -0.172023)
-bones/5/rotation = Quaternion(0.36334, -0.36334, 0.606617, 0.606617)
+bones/4/rotation = Quaternion(0.702449, -0.29191, -0.646471, -0.0585386)
+bones/5/rotation = Quaternion(0.300506, -0.376591, 0.679877, 0.55285)
 
 [node name="PrototypePete" parent="RootNode/KayKit Animated Character/Skeleton3D" index="0"]
 visible = false
 
 [node name="Body" type="BoneAttachment3D" parent="RootNode/KayKit Animated Character/Skeleton3D" index="1"]
-transform = Transform3D(1, -5.31714e-24, -8.66272e-31, 5.31714e-24, 1, 1.62921e-07, 1.88079e-37, -1.62921e-07, 1, 0, 0, 0)
+transform = Transform3D(1, -5.31681e-24, -5.99436e-26, 5.31715e-24, 0.999936, 0.0112736, 0, -0.0112736, 0.999936, 0, 0, 0)
 bone_name = "Body"
 bone_idx = 0
 
@@ -367,7 +366,7 @@ mesh = SubResource("ArrayMesh_cx245")
 skeleton = NodePath("")
 
 [node name="Head" type="BoneAttachment3D" parent="RootNode/KayKit Animated Character/Skeleton3D" index="2"]
-transform = Transform3D(1, -2.62521e-23, -8.66271e-31, 2.62521e-23, 1, 1.62921e-07, -3.41074e-30, -1.62921e-07, 1, -4.16185e-11, 0.00711598, -1.15125e-09)
+transform = Transform3D(1, 1.97466e-17, -1.2031e-18, -1.97723e-17, 0.995572, -0.0940012, -6.58436e-19, 0.0940012, 0.995572, -4.16185e-11, 0.00711553, -8.02229e-05)
 bone_name = "Head"
 bone_idx = 1
 
@@ -389,7 +388,7 @@ mesh = SubResource("ArrayMesh_s8jo7")
 skeleton = NodePath("")
 
 [node name="ArmLeft" type="BoneAttachment3D" parent="RootNode/KayKit Animated Character/Skeleton3D" index="3"]
-transform = Transform3D(8.66273e-31, 0.471937, -0.881632, -1.62921e-07, -0.881632, -0.471937, -1, 1.43636e-07, 7.68882e-08, 0.0014, 0.00691598, -1.17522e-09)
+transform = Transform3D(2.38419e-07, 0.495538, -0.868586, -0.0112736, -0.868531, -0.495507, -0.999937, 0.00979219, 0.0055864, 0.0014, 0.00691554, -7.79682e-05)
 bone_name = "armLeft"
 bone_idx = 2
 
@@ -399,7 +398,7 @@ mesh = SubResource("ArrayMesh_4n0pq")
 skeleton = NodePath("")
 
 [node name="ArmRight" type="BoneAttachment3D" parent="RootNode/KayKit Animated Character/Skeleton3D" index="4"]
-transform = Transform3D(8.66273e-31, -0.471937, -0.881632, -1.62921e-07, -0.881632, 0.471937, -1, 1.43636e-07, -7.68882e-08, -0.0014, 0.00691598, -1.12676e-09)
+transform = Transform3D(-0.00627518, -0.485792, -0.874052, -0.345021, -0.819343, 0.457862, -0.938575, 0.304439, -0.162467, -0.0014, 0.00691554, -7.79682e-05)
 bone_name = "armRight"
 bone_idx = 4
 
@@ -409,11 +408,11 @@ mesh = SubResource("ArrayMesh_jvynm")
 skeleton = NodePath("")
 
 [node name="HandSlotLeft" type="BoneAttachment3D" parent="RootNode/KayKit Animated Character/Skeleton3D" index="5"]
-transform = Transform3D(-1, -8.66273e-31, -5.96046e-07, -5.96046e-07, 1.62921e-07, 1, 9.23706e-14, 1, -1.62921e-07, 0.00400001, 0.00205887, -2.06943e-10)
+transform = Transform3D(-0.999636, -2.4572e-07, -0.0269662, -0.0269645, 0.0112738, 0.999573, 0.000303866, 0.999937, -0.0112697, 0.00413003, 0.00213061, -2.40207e-05)
 bone_name = "handSlotLeft"
 bone_idx = 3
 
 [node name="HandSlotRight" type="BoneAttachment3D" parent="RootNode/KayKit Animated Character/Skeleton3D" index="6"]
-transform = Transform3D(-1, -8.66273e-31, 5.96046e-07, 5.96046e-07, 1.62921e-07, 1, -9.23706e-14, 1, -1.62921e-07, -0.00400001, 0.00205887, -4.65818e-10)
+transform = Transform3D(-0.975034, 0.214336, -0.058051, 0.0190565, 0.341223, 0.93979, 0.221239, 0.915221, -0.336788, -0.00407634, 0.0024016, 0.00159926)
 bone_name = "handSlotRight"
 bone_idx = 5
