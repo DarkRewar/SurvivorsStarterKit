@@ -49,6 +49,7 @@ A: That's because of the physic engine. I can't turn Jolt into multithread for n
 
 ## Credits
 
+- [Jolt](https://github.com/godot-jolt/godot-jolt) by [Jorrit Rouwe](https://twitter.com/jrouwe) ;
 - [Godot Jolt](https://github.com/godot-jolt/godot-jolt) by Mikael Hermansson and Godot Jolt contributors ;
 - [KayKit - Character Animations](https://kaylousberg.itch.io/kaykit-animations) by [Kay Lousberg](https://kaylousberg.com/) ;
 - [KayKit - Dungeon Pack](https://kaylousberg.itch.io/kaykit-dungeon) by [Kay Lousberg](https://kaylousberg.com/) ;
