@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://cxsvig1irj1y5"]
 
-[ext_resource type="Script" path="res://Scripts/Players/LifestealAttack.cs" id="1_ohiqa"]
+[ext_resource type="Script" uid="uid://cyd146e33xh87" path="res://Scripts/Players/LifestealAttack.cs" id="1_ohiqa"]
 [ext_resource type="Material" uid="uid://c3477xk1avb8x" path="res://Objects/Materials/lifesteal_aoe.tres" id="2_q25fk"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_8ea1f"]
@@ -18,9 +18,10 @@ emission_ring_axis = Vector3(2.08165e-12, 2.08165e-12, 2.08165e-12)
 emission_ring_height = 2.08165e-12
 emission_ring_radius = 1.0
 emission_ring_inner_radius = 0.75
+emission_ring_cone_angle = 90.0
 direction = Vector3(2.08165e-12, 2.08165e-12, 2.08165e-12)
-gravity = Vector3(2.08165e-12, 1, 2.08165e-12)
 initial_velocity_max = 0.1
+gravity = Vector3(2.08165e-12, 1, 2.08165e-12)
 radial_accel_min = -1.0
 radial_accel_max = -0.3
 scale_min = 0.03

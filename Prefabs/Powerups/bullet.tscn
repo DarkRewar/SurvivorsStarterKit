@@ -15,9 +15,9 @@ curve = SubResource("Curve_l8cpc")
 direction = Vector3(0, 0, 0)
 spread = 180.0
 flatness = 0.69
-gravity = Vector3(0, 0, 0)
 initial_velocity_min = 0.5
 initial_velocity_max = 1.0
+gravity = Vector3(0, 0, 0)
 scale_curve = SubResource("CurveTexture_38mb5")
 
 [sub_resource type="SphereMesh" id="SphereMesh_e5nuh"]

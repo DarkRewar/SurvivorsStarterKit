@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cry7wgh8tlrqd"]
 
-[ext_resource type="Script" path="res://Scripts/Players/FloatingSphereAttack.cs" id="1_syllj"]
+[ext_resource type="Script" uid="uid://c5a7gthnet16o" path="res://Scripts/Players/FloatingSphereAttack.cs" id="1_syllj"]
 [ext_resource type="PackedScene" uid="uid://b3rm7ghuxlu71" path="res://Prefabs/Powerups/floating_sphere_projectile.tscn" id="2_we4yo"]
 
 [node name="FloatingSphere" type="Node3D"]

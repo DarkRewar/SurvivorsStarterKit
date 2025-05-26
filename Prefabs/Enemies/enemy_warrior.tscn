@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://mmhmyryxmbn8"]
 
-[ext_resource type="Script" path="res://Scripts/Enemies/Enemy.cs" id="1_do72q"]
+[ext_resource type="Script" uid="uid://ct1gbjwefmypu" path="res://Scripts/Enemies/Enemy.cs" id="1_do72q"]
 [ext_resource type="PackedScene" uid="uid://ddy1iprhf2ql3" path="res://addons/kaykit_skeleton_pack/enemy_skeleton_warrior.tscn" id="2_evwpn"]
 [ext_resource type="PackedScene" uid="uid://dbch8185xjxrs" path="res://Prefabs/damage_particles.tscn" id="3_sivra"]
 

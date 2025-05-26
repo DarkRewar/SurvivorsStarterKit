@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cr6nu73ixtmqt"]
 
 [ext_resource type="PackedScene" uid="uid://88xru8fli1u" path="res://Prefabs/Powerups/spirit_water_projectile.tscn" id="1_kp6ue"]
-[ext_resource type="Script" path="res://Scripts/Players/SpiritWater.cs" id="1_wpm03"]
+[ext_resource type="Script" uid="uid://8ju7rq6h1ob" path="res://Scripts/Players/SpiritWater.cs" id="1_wpm03"]
 
 [node name="SpiritWater" type="Node3D"]
 script = ExtResource("1_wpm03")

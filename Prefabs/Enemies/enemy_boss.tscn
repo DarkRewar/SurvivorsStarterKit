@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://h7skiwe3dxvx"]
 
-[ext_resource type="Script" path="res://Scripts/Enemies/Enemy.cs" id="1_gq7vj"]
+[ext_resource type="Script" uid="uid://ct1gbjwefmypu" path="res://Scripts/Enemies/Enemy.cs" id="1_gq7vj"]
 [ext_resource type="PackedScene" uid="uid://ddy1iprhf2ql3" path="res://addons/kaykit_skeleton_pack/enemy_skeleton_warrior.tscn" id="2_0oqdm"]
 [ext_resource type="PackedScene" uid="uid://bqs2yj7yvc680" path="res://addons/kaykit_skeleton_pack/assets/shield.gltf.glb" id="3_2l28h"]
 [ext_resource type="PackedScene" uid="uid://dbch8185xjxrs" path="res://Prefabs/damage_particles.tscn" id="3_aaiag"]
@@ -38,9 +38,9 @@ curve = SubResource("Curve_frdfq")
 emission_shape = 1
 emission_sphere_radius = 0.2
 direction = Vector3(0, 0, -1)
-gravity = Vector3(0, 0, 0)
 initial_velocity_min = 0.2
 initial_velocity_max = 1.5
+gravity = Vector3(0, 0, 0)
 scale_curve = SubResource("CurveTexture_2jebh")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hp047"]

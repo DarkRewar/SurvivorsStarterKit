@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bpb5p32e5r0ub" path="res://Prefabs/UI/lifebar.tscn" id="2_b3dd8"]
 [ext_resource type="PackedScene" uid="uid://oqbxhb2symxp" path="res://Prefabs/UI/powerup_block.tscn" id="2_cdj2w"]
-[ext_resource type="Script" path="res://Scripts/UI/UpgradeView.cs" id="2_esggw"]
+[ext_resource type="Script" uid="uid://bttsdt8w0l4ni" path="res://Scripts/UI/UpgradeView.cs" id="2_esggw"]
 
 [node name="HUD" type="Control"]
 layout_mode = 3

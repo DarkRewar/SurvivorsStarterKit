@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://brnj7g14cjd0j" path="res://Prefabs/player.tscn" id="1_22blk"]
 [ext_resource type="PackedScene" uid="uid://ccwt5vlfksxqv" path="res://Scenes/HUD.tscn" id="4_4douh"]
 [ext_resource type="MeshLibrary" uid="uid://cc62mitek1vk2" path="res://Objects/Libraries/kaylousberg_dungeon.tres" id="7_3g017"]
-[ext_resource type="Script" path="res://Scripts/UI/DamageLabelManager.cs" id="9_hf6p0"]
+[ext_resource type="Script" uid="uid://c1hx08aqkelif" path="res://Scripts/UI/DamageLabelManager.cs" id="9_hf6p0"]
 
 [sub_resource type="Environment" id="Environment_7aawg"]
 ambient_light_source = 1

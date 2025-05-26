@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://brnj7g14cjd0j"]
 
-[ext_resource type="Script" path="res://Scripts/Players/Player.cs" id="1_6pgcl"]
+[ext_resource type="Script" uid="uid://dc3lgw5tx1rvo" path="res://Scripts/Players/Player.cs" id="1_6pgcl"]
 [ext_resource type="PackedScene" uid="uid://cjgoeugpyg7n1" path="res://Prefabs/Powerups/shooting.tscn" id="3_h4lb3"]
 [ext_resource type="PackedScene" uid="uid://cr6nu73ixtmqt" path="res://Prefabs/Powerups/spirit_water.tscn" id="4_cm2ek"]
 [ext_resource type="PackedScene" uid="uid://cxsvig1irj1y5" path="res://Prefabs/Powerups/lifesteal.tscn" id="5_c6obf"]
