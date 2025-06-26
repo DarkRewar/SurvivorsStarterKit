@@ -10,13 +10,16 @@ This project is inspired by [Vampire Survivors](https://store.steampowered.com/a
 - Upgrades (for player and enemies) ; 
 - Minimal UI.
 
-**:warning: The project is written in C# (because I'm a Unity game dev and found there wasn't enough C# templates).**
+## Requirements
+
+- [Godot 4.4.1 (C# version)](https://github.com/godotengine/godot/releases/download/4.4.1-stable/Godot_v4.4.1-stable_mono_win64.zip) ;
+- .NET + IDE (Visual Code or Rider)
 
 ## Project architecture
 
 ![project_overview_1](.img/project_overview_1.jpg)
 
-[WIP]
+The game requires the `GameManager` to be autoloaded at start. Don't forget to add it if it's not already.
 
 ![autoload](.img/autoload.jpg)
 
@@ -31,7 +34,15 @@ In this starter kit, only 4 spells are available for the player :
 
 ## Enemies
 
-[WIP]
+![enemies](.img/enemies.png)
+
+By default, there are 5 enemies:
+
+- Warrior (normal life, normal damages, more experience);
+- Minion (more life, less damages, less experience);
+- Mage (less life, more damages, normal experience);
+- Archer (less life, less, less experience);
+- Boss (huge life, huge damages, huge experience).
 
 ## Troubleshooting
 
