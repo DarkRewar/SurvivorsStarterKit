@@ -37,30 +37,29 @@ Lifepoints = 20
 
 [node name="Skeleton3D" parent="EnemySkeletonMinion/RootNode/KayKit Animated Character" index="0"]
 bones/0/rotation = Quaternion(-8.14603e-08, -2.16568e-31, 2.65857e-24, 1)
-bones/1/rotation = Quaternion(0.0457395, 1.16415e-10, 4.71118e-10, 0.998953)
-bones/2/rotation = Quaternion(0.685649, 0.172874, -0.685649, 0.172874)
+bones/1/rotation = Quaternion(0.0520079, 3.49246e-10, -2.66482e-09, 0.998647)
+bones/2/rotation = Quaternion(0.683686, 0.180482, -0.683686, 0.180482)
 bones/3/rotation = Quaternion(-0.606617, 0.606617, -0.36334, -0.36334)
-bones/4/position = Vector3(-0.0014, 0.00691598, -1.03253e-11)
-bones/4/rotation = Quaternion(0.704731, -0.286691, -0.646735, -0.0538122)
+bones/4/rotation = Quaternion(0.702678, -0.291389, -0.646502, -0.0580642)
 bones/5/rotation = Quaternion(0.300506, -0.376591, 0.679877, 0.55285)
 
 [node name="Body" parent="EnemySkeletonMinion/RootNode/KayKit Animated Character/Skeleton3D" index="1"]
-transform = Transform3D(1, -5.31715e-24, -8.66274e-31, 5.31715e-24, 1, 1.62921e-07, -4.70198e-38, -1.62921e-07, 1, 0, 0, 0)
+transform = Transform3D(1, -5.31714e-24, -8.66272e-31, 5.31714e-24, 1, 1.62921e-07, 1.88079e-37, -1.62921e-07, 1, 0, 0, 0)
 
 [node name="Head" parent="EnemySkeletonMinion/RootNode/KayKit Animated Character/Skeleton3D" index="2"]
-transform = Transform3D(1, -9.30601e-10, 2.75684e-10, 9.519e-10, 0.995816, -0.091383, -1.8949e-10, 0.091383, 0.995816, -4.16185e-11, 0.00711598, -1.15125e-09)
+transform = Transform3D(1, 5.35875e-09, 4.20363e-10, -5.2861e-09, 0.99459, -0.103875, -9.74729e-10, 0.103875, 0.99459, -4.16185e-11, 0.00711598, -1.15125e-09)
 
 [node name="ArmLeft" parent="EnemySkeletonMinion/RootNode/KayKit Animated Character/Skeleton3D" index="3"]
-transform = Transform3D(5.96047e-08, 0.474123, -0.880459, -1.77822e-07, -0.880459, -0.474123, -1, 2.47753e-07, -1.61174e-07, 0.0014, 0.00691598, -1.17522e-09)
+transform = Transform3D(1.19209e-07, 0.493571, -0.869706, -1.77822e-07, -0.869706, -0.493571, -1, 2.46001e-07, -1.58006e-07, 0.0014, 0.00691598, -1.17522e-09)
 
 [node name="ArmRight" parent="EnemySkeletonMinion/RootNode/KayKit Animated Character/Skeleton3D" index="4"]
-transform = Transform3D(-0.000915886, -0.473684, -0.880694, -0.334476, -0.829825, 0.446672, -0.942405, 0.29498, -0.157676, -0.0014, 0.00691598, -1.13708e-09)
+transform = Transform3D(-0.00574518, -0.484582, -0.874727, -0.334428, -0.823443, 0.458368, -0.942405, 0.295166, -0.157327, -0.0014, 0.00691598, -1.13708e-09)
 
 [node name="HandSlotLeft" parent="EnemySkeletonMinion/RootNode/KayKit Animated Character/Skeleton3D" index="5"]
-transform = Transform3D(-0.999997, 1.52333e-07, -0.0024823, -0.00248235, 2.24252e-07, 0.999997, -2.06011e-08, 1, -1.72166e-07, 0.00401205, 0.00206533, 3.66661e-10)
+transform = Transform3D(-0.999695, 6.92251e-08, -0.0247028, -0.0247028, 1.47693e-07, 0.999695, -1.6981e-08, 1, -1.12512e-07, 0.00411919, 0.00212458, 3.57009e-10)
 
 [node name="HandSlotRight" parent="EnemySkeletonMinion/RootNode/KayKit Animated Character/Skeleton3D" index="6"]
-transform = Transform3D(-0.975267, 0.209016, -0.0718741, 0.00212264, 0.334022, 0.942563, 0.221019, 0.919099, -0.326204, -0.00400963, 0.00234429, 0.00162511)
+transform = Transform3D(-0.975065, 0.213812, -0.0594386, 0.0151148, 0.331202, 0.943439, 0.221405, 0.919017, -0.326175, -0.00406967, 0.00237945, 0.00162613)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.765, 0, 0, 0, 0.765, 0, 0, 0, 0.765, 0, 0.754766, 0)
@@ -74,9 +73,10 @@ one_shot = true
 autostart = true
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
+root_node = NodePath("../EnemySkeletonMinion")
+root_motion_track = NodePath("RootNode/KayKit Animated Character/Skeleton3D:Body")
+root_motion_local = false
 tree_root = SubResource("AnimationNodeStateMachine_37bnq")
 anim_player = NodePath("../EnemySkeletonMinion/AnimationPlayer")
-active = true
-root_motion_track = NodePath("RootNode/KayKit Animated Character/Skeleton3D:Body")
 
 [editable path="EnemySkeletonMinion"]

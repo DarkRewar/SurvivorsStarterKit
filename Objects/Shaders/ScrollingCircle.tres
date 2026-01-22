@@ -112,15 +112,15 @@ default_input_values = [0, 0.49, 1, 0.5, 2, 0.5]
 
 [resource]
 code = "shader_type spatial;
-render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx;
+render_mode blend_mix, depth_draw_opaque, depth_test_default, cull_back, diffuse_lambert, specular_schlick_ggx;
 
 uniform float ScrollSpeed = 0.05000000074506;
-uniform float PatternScale = 1;
+uniform float PatternScale = 1.0;
 uniform sampler2D Pattern : repeat_enable;
 uniform vec4 MainColor : source_color;
 uniform float RimWidth = 0.23000000417233;
-uniform float Emission = 1;
-uniform float RimTint = 1;
+uniform float Emission = 1.0;
+uniform float RimTint = 1.0;
 
 
 
