@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b2jsscceukix4"]
+[gd_scene format=3 uid="uid://b2jsscceukix4"]
 
 [ext_resource type="PackedScene" uid="uid://brnj7g14cjd0j" path="res://Prefabs/player.tscn" id="1_22blk"]
 [ext_resource type="PackedScene" uid="uid://ccwt5vlfksxqv" path="res://Scenes/HUD.tscn" id="4_4douh"]
@@ -15,7 +15,7 @@ sdfgi_enabled = true
 glow_enabled = true
 glow_normalized = true
 glow_intensity = 4.2
-glow_strength = 0.6
+glow_strength = 0.42
 glow_bloom = 0.14
 glow_hdr_threshold = 0.31
 glow_hdr_scale = 0.36
@@ -33,17 +33,17 @@ dof_blur_amount = 0.07
 [sub_resource type="BoxShape3D" id="BoxShape3D_3ms7s"]
 size = Vector3(200, 0.2, 200)
 
-[node name="MainScene" type="Node3D"]
+[node name="MainScene" type="Node3D" unique_id=1327599314]
 
-[node name="Player" parent="." instance=ExtResource("1_22blk")]
+[node name="Player" parent="." unique_id=1968830489 instance=ExtResource("1_22blk")]
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1865252665]
 transform = Transform3D(-0.736787, -0.574942, 0.355791, -0.028459, 0.552126, 0.833275, -0.675526, 0.603821, -0.423161, 0, 0, 0)
 light_indirect_energy = 2.0
 light_volumetric_fog_energy = 0.0
 shadow_enabled = true
 
-[node name="GridMap" type="GridMap" parent="."]
+[node name="GridMap" type="GridMap" parent="." unique_id=1156170675]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, 0)
 mesh_library = ExtResource("7_3g017")
 cell_size = Vector3(4, 0.8, 4)
@@ -56,16 +56,16 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=59548718]
 environment = SubResource("Environment_7aawg")
 camera_attributes = SubResource("CameraAttributesPractical_vfufh")
 
-[node name="HUD" parent="." instance=ExtResource("4_4douh")]
+[node name="HUD" parent="." unique_id=360526487 instance=ExtResource("4_4douh")]
 script = ExtResource("9_hf6p0")
 
-[node name="GroundCollider" type="StaticBody3D" parent="."]
+[node name="GroundCollider" type="StaticBody3D" parent="." unique_id=1525610499]
 collision_layer = 15
 collision_mask = 15
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="GroundCollider"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GroundCollider" unique_id=1239877243]
 shape = SubResource("BoxShape3D_3ms7s")

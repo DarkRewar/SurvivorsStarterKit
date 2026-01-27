@@ -12,7 +12,7 @@ This project is inspired by [Vampire Survivors](https://store.steampowered.com/a
 
 ## Requirements
 
-- [Godot 4.4.1 (C# version)](https://github.com/godotengine/godot/releases/download/4.4.1-stable/Godot_v4.4.1-stable_mono_win64.zip) ;
+- [Godot 4.6 (C# version)](https://downloads.godotengine.org/?version=4.6&flavor=stable&slug=mono_win64.zip&platform=windows.64) ;
 - .NET + IDE (Visual Code or Rider)
 
 ## Project architecture

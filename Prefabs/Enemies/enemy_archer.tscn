@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b3p2ih6wayfgl"]
+[gd_scene format=3 uid="uid://b3p2ih6wayfgl"]
 
 [ext_resource type="Script" uid="uid://ct1gbjwefmypu" path="res://Scripts/Enemies/Enemy.cs" id="1_10l82"]
 [ext_resource type="PackedScene" uid="uid://cqg0hvlemgom" path="res://addons/kaykit_skeleton_pack/enemy_skeleton_archer.tscn" id="2_bc51o"]
@@ -23,7 +23,7 @@ advance_mode = 2
 states/Start/position = Vector2(162, 100)
 transitions = ["Start", "KayKit Animated Character|Idle", SubResource("AnimationNodeStateMachineTransition_gor3g"), "KayKit Animated Character|Idle", "End", SubResource("AnimationNodeStateMachineTransition_xywv6")]
 
-[node name="EnemyArcher" type="RigidBody3D"]
+[node name="EnemyArcher" type="AnimatableBody3D" unique_id=821544287]
 collision_layer = 2
 collision_mask = 15
 axis_lock_linear_y = true
@@ -31,49 +31,49 @@ axis_lock_angular_x = true
 axis_lock_angular_z = true
 script = ExtResource("1_10l82")
 
-[node name="EnemySkeletonArcher" parent="." instance=ExtResource("2_bc51o")]
+[node name="EnemySkeletonArcher" parent="." unique_id=1478003569 instance=ExtResource("2_bc51o")]
 
-[node name="Skeleton3D" parent="EnemySkeletonArcher/RootNode/KayKit Animated Character" index="0"]
+[node name="Skeleton3D" parent="EnemySkeletonArcher/RootNode/KayKit Animated Character" parent_id_path=PackedInt32Array(1478003569, 1299331446) index="0" unique_id=488906677]
 bones/0/rotation = Quaternion(-0.0348664, -0.00152229, -0.0435928, 0.99844)
-bones/1/rotation = Quaternion(0.0498911, 0, 1.38334e-09, 0.998755)
-bones/2/rotation = Quaternion(0.684294, 0.178162, -0.684294, 0.178162)
-bones/3/rotation = Quaternion(-0.606617, 0.606617, -0.36334, -0.36334)
-bones/4/rotation = Quaternion(0.703381, -0.289758, -0.646602, -0.0565798)
-bones/5/rotation = Quaternion(0.300506, -0.376591, 0.679877, 0.55285)
+bones/1/rotation = Quaternion(0.06854065, 1.1641535e-10, -1.5679692e-09, 0.99764836)
+bones/2/rotation = Quaternion(0.6791225, 0.19695857, -0.67912245, 0.1969586)
+bones/3/rotation = Quaternion(-0.6066168, 0.6066169, -0.36334014, -0.3633401)
+bones/4/rotation = Quaternion(0.6970913, -0.30396754, -0.645623, -0.06955974)
+bones/5/rotation = Quaternion(0.30050638, -0.3765909, 0.6798765, 0.55285007)
 
 [node name="Body" parent="EnemySkeletonArcher/RootNode/KayKit Animated Character/Skeleton3D" index="1"]
-transform = Transform3D(0.996195, 0.0871557, 1.72295e-08, -0.0869434, 0.993768, 0.0697567, 0.00607967, -0.0694912, 0.997564, 0, 0, 0)
+transform = Transform3D(0.9961947, 0.08715567, 1.7229468e-08, -0.08694336, 0.99376804, 0.06975669, 0.0060796733, -0.06949124, 0.997564, 0, 0, 0)
 
 [node name="Head" parent="EnemySkeletonArcher/RootNode/KayKit Animated Character/Skeleton3D" index="2"]
-transform = Transform3D(0.996195, 0.0867218, -0.00868574, -0.0869434, 0.995773, -0.0296275, 0.00607967, 0.0302699, 0.999523, 0.000620198, 0.00707163, -0.000494498)
+transform = Transform3D(0.99619466, 0.08633678, -0.011919296, -0.08694335, 0.9939707, -0.06680535, 0.0060796724, 0.06758743, 0.99769473, 0.00062019785, 0.007071633, -0.0004944982)
 
 [node name="ArmLeft" parent="EnemySkeletonArcher/RootNode/KayKit Animated Character/Skeleton3D" index="3"]
-transform = Transform3D(-1.72295e-08, 0.409715, -0.912214, -0.0697568, -0.909992, -0.408717, -0.997565, 0.063633, 0.0285803, 0.00199744, 0.00675116, -0.000472088)
+transform = Transform3D(9.892885e-08, 0.45936835, -0.8882458, -0.06975678, -0.8860821, -0.45824933, -0.99756485, 0.061961133, 0.032044027, 0.0019974394, 0.0067511583, -0.00047208846)
 
 [node name="ArmRight" parent="EnemySkeletonArcher/RootNode/KayKit Animated Character/Skeleton3D" index="4"]
-transform = Transform3D(-0.0332429, -0.550923, -0.833894, -0.397749, -0.758144, 0.516734, -0.916893, 0.348858, -0.193926, -0.000791906, 0.0069946, -0.000489111)
+transform = Transform3D(-0.047487505, -0.58185697, -0.81190354, -0.3960214, -0.7352414, 0.5500794, -0.91701347, 0.34765267, -0.19551268, -0.0007919056, 0.0069945995, -0.00048911147)
 
 [node name="HandSlotLeft" parent="EnemySkeletonArcher/RootNode/KayKit Animated Character/Skeleton3D" index="5"]
-transform = Transform3D(-0.997597, 2.31953e-07, 0.0692883, 0.0691195, 0.0697568, 0.995167, -0.00483318, 0.997565, -0.0695891, 0.00425465, 0.00173781, -0.00012152)
+transform = Transform3D(-0.99989915, 8.819106e-08, 0.014200926, 0.014166266, 0.06975675, 0.99746364, -0.000990374, 0.99756485, -0.06974968, 0.004528203, 0.0018695341, -0.00013073056)
 
 [node name="HandSlotRight" parent="EnemySkeletonArcher/RootNode/KayKit Animated Character/Skeleton3D" index="6"]
-transform = Transform3D(-0.970511, 0.240335, 0.0186662, 0.110753, 0.37578, 0.920067, 0.214111, 0.895003, -0.391316, -0.00382706, 0.00281781, 0.00143282)
+transform = Transform3D(-0.96565676, 0.25356418, 0.05667737, 0.14993733, 0.36568764, 0.9185815, 0.21219346, 0.8955331, -0.39114696, -0.003997486, 0.0029439898, 0.0014261848)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=906316578]
 transform = Transform3D(0.765, 0, 0, 0, 0.765, 0, 0, 0, 0.765, 0, 0.754766, 0)
 shape = SubResource("SphereShape3D_cmmfk")
 
-[node name="DamageParticles" parent="." instance=ExtResource("3_ud721")]
+[node name="DamageParticles" parent="." unique_id=1678295037 instance=ExtResource("3_ud721")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.57005, 0)
 
-[node name="AttackCooldown" type="Timer" parent="."]
+[node name="AttackCooldown" type="Timer" parent="." unique_id=1226282879]
 one_shot = true
 autostart = true
 
-[node name="AnimationTree" type="AnimationTree" parent="."]
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=258438833]
+root_node = NodePath("../EnemySkeletonArcher")
+root_motion_track = NodePath("RootNode/KayKit Animated Character/Skeleton3D:Body")
 tree_root = SubResource("AnimationNodeStateMachine_37bnq")
 anim_player = NodePath("../EnemySkeletonArcher/AnimationPlayer")
-active = true
-root_motion_track = NodePath("RootNode/KayKit Animated Character/Skeleton3D:Body")
 
 [editable path="EnemySkeletonArcher"]

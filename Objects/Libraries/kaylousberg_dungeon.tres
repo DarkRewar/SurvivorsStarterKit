@@ -1,4 +1,4 @@
-[gd_resource type="MeshLibrary" load_steps=26 format=4 uid="uid://cc62mitek1vk2"]
+[gd_resource type="MeshLibrary" format=4 uid="uid://cc62mitek1vk2"]
 
 [ext_resource type="Material" uid="uid://pwt7hdhjhmb6" path="res://addons/kaykit_dungeon_remastered/Assets/texture/kaylousberg_dungeon_material.tres" id="1_w2t1k"]
 

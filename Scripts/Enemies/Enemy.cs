@@ -10,7 +10,7 @@ public enum EnemyClass
     Boss = 100
 }
 
-public partial class Enemy : RigidBody3D
+public partial class Enemy : AnimatableBody3D
 {
     public const uint MaxLifepoints = 10;
 
@@ -62,7 +62,8 @@ public partial class Enemy : RigidBody3D
 
         if (_attackCooldown.TimeLeft <= 0) Attack();
 
-        LookAt(_gameManager.Player.GlobalPosition, Vector3.Up, true);
+        if(GlobalPosition.DistanceSquaredTo(_gameManager.Player.GlobalPosition) > Mathf.Epsilon)
+            LookAt(_gameManager.Player.GlobalPosition, Vector3.Up, true);
 
         if (_lifebar != null)
         {
@@ -84,12 +85,24 @@ public partial class Enemy : RigidBody3D
     public override void _PhysicsProcess(double delta)
     {
         base._PhysicsProcess(delta);
-
+    
         var playerPos = _gameManager.Player.GlobalPosition;
         var direction = (playerPos - GlobalPosition).LimitLength();
-
-        LinearVelocity = direction * MovementSpeed;
+        
+        GlobalPosition += (float)delta * MovementSpeed * direction;
+        
+        // ConstantLinearVelocity = direction * MovementSpeed;
     }
+
+    // public override void _IntegrateForces(PhysicsDirectBodyState3D state)
+    // {
+    //     base._IntegrateForces(state);
+    //
+    //     var playerPos = _gameManager.Player.GlobalPosition;
+    //     var direction = (playerPos - GlobalPosition).LimitLength();
+    //     
+    //     state.LinearVelocity = direction * MovementSpeed;
+    // }
 
     public override void _ExitTree()
     {

@@ -8,14 +8,17 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="Survivors Starter Kit"
 run/main_scene="res://Scenes/main_scene.tscn"
-config/features=PackedStringArray("4.5", "C#", "Forward Plus")
-run/max_fps=30
+config/features=PackedStringArray("4.6", "C#", "Forward Plus")
 boot_splash/show_image=false
-boot_splash/fullsize=false
+boot_splash/stretch_mode=0
 boot_splash/use_filter=false
 config/icon="res://icon.svg"
 
@@ -83,12 +86,7 @@ SpawnBoss={
 
 [physics]
 
-common/max_physics_steps_per_frame=2
 3d/physics_engine="Jolt Physics"
-3d/solver/solver_iterations=1
-jolt_physics_extension_3d/continuous_cd/movement_threshold=50.0
-jolt_physics_extension_3d/solver/velocity_iterations=4
-jolt_physics_extension_3d/limits/max_temporary_memory=128
 
 [rendering]
 

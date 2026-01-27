@@ -42,7 +42,7 @@ internal class EnemyManager
             var playerPos = _gameManager.Player.GlobalPosition;
             var direction = (playerPos - enemy.GlobalPosition).LimitLength();
 
-            enemy.LinearVelocity = direction * enemy.MovementSpeed;
+            // enemy.LinearVelocity = direction * enemy.MovementSpeed;
         }
     }
 

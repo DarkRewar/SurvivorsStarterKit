@@ -88,13 +88,6 @@ public partial class GameManager : Node
         }
     }
 
-    //public override void _PhysicsProcess(double delta)
-    //{
-    //    base._PhysicsProcess(delta);
-
-    //    _enemyManager._PhysicsProcess(delta);
-    //}
-
     private void LoadPowerups()
     {
         foreach (var path in PowerupPaths.PlayerPowerups)
