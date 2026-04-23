@@ -2,13 +2,14 @@ using Godot;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 public record Choice(Powerup Powerup, EnemyPowerup EnemyPowerup, double EnemyValue);
 
 public partial class GameManager : Node
 {
     private const float VoteTime = 30;
+    private const float GlobalGameSpeedMultiplier = 2.0f;
+    private const float FirstPersonXpMultiplier = 1.5f;
 
     public Player Player;
 
@@ -37,6 +38,7 @@ public partial class GameManager : Node
     public override void _Ready()
     {
         base._Ready();
+        Engine.TimeScale = GlobalGameSpeedMultiplier;
 
         _enemyManager = new(this);
         _enemySpawnTimeLeft = _enemyManager.SpawnDelay;
@@ -60,6 +62,7 @@ public partial class GameManager : Node
     {
         base._Process(delta);
 
+        if (GetTree().Paused) return;
         if (_isVotePhase) return;
 
         // Debug thing
@@ -73,13 +76,15 @@ public partial class GameManager : Node
 
         if (Player == null) return;
 
+        _enemyManager.ProcessEnemyCapDifficulty(delta);
+
         _enemySpawnTimeLeft -= delta;
         if (_enemySpawnTimeLeft > 0) return;
         _enemySpawnTimeLeft = _enemyManager.SpawnDelay;
 
         //int enemiesToSpawn = 15; // <-- This is a stress test value
         int enemiesToSpawn = 1;
-        if (_enemyManager.Enemies.Count <= 200)
+        if (_enemyManager.Enemies.Count < EnemyManager.MaxEnemies)
         {
             for (int i = 0; i < enemiesToSpawn; ++i)
             {
@@ -149,11 +154,9 @@ public partial class GameManager : Node
         _upgradeView.SetChoices(_currentVotes);
     }
 
-    private async void OnChoose(Choice choice)
+    private void OnChoose(Choice choice)
     {
         _upgradeView.DisplayChoicePicked(_currentVotes.IndexOf(choice) + 1);
-
-        await Task.Delay(3000);
 
         var upgradables = Player.GetChildren()
             .Where(child => child is IUpgradable)
@@ -172,14 +175,19 @@ public partial class GameManager : Node
         _playerXp = 0;
     }
 
-    public Vector3 GetRandomPosAroundPlayer(float range) => Player.Position + range * new Vector3(
+    public Vector3 GetRandomPosAroundPlayer(float range)
+    {
+        var offset = new Vector3(
             (float)GD.RandRange(-1f, 1f),
             0,
-            (float)GD.RandRange(-1f, 1f)
-            ).Normalized();
+            (float)GD.RandRange(-1f, 1f));
+        if (offset.LengthSquared() < 1e-6f)
+            offset = Vector3.Right;
+        return Player.GlobalPosition + range * offset.Normalized();
+    }
 
     internal Enemy GetNearestEnemy() => _enemyManager.Enemies
-        .OrderBy(enemy => (Player.Position - enemy.Position).Length())
+        .OrderBy(enemy => (Player.GlobalPosition - enemy.GlobalPosition).Length())
         .FirstOrDefault();
 
     internal int GetMaxXPPerLevel(int level) => Mathf.RoundToInt(Math.Log10(Math.Pow(level, 10) * 10) * 5);

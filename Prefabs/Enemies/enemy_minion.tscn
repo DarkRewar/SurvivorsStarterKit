@@ -8,20 +8,14 @@
 radius = 1.0
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ptn36"]
-animation = &"KayKit Animated Character|Run"
+animation = &"KayKit Animated Character|Idle"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gor3g"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xywv6"]
-switch_mode = 2
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_37bnq"]
-"states/KayKit Animated Character|Idle/node" = SubResource("AnimationNodeAnimation_ptn36")
-"states/KayKit Animated Character|Idle/position" = Vector2(482.571, 100)
-states/Start/position = Vector2(162, 100)
-transitions = ["Start", "KayKit Animated Character|Idle", SubResource("AnimationNodeStateMachineTransition_gor3g"), "KayKit Animated Character|Idle", "End", SubResource("AnimationNodeStateMachineTransition_xywv6")]
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeStateMachine_37bnq"]
+graph_offset = Vector2(-40, -40)
+nodes/IdleAnim/node = SubResource("AnimationNodeAnimation_ptn36")
+nodes/IdleAnim/position = Vector2(40, 40)
+nodes/output/position = Vector2(360, 40)
+node_connections = [&"output", 0, &"IdleAnim"]
 
 [node name="EnemyMinion" type="AnimatableBody3D" unique_id=149613043]
 disable_mode = 2
@@ -36,7 +30,7 @@ Lifepoints = 20
 
 [node name="EnemySkeletonMinion" parent="." unique_id=831260168 instance=ExtResource("2_3v0ni")]
 
-[node name="Skeleton3D" parent="EnemySkeletonMinion/RootNode/KayKit Animated Character" parent_id_path=PackedInt32Array(831260168, 1299331446) index="0" unique_id=488906677]
+[node name="Skeleton3D" parent="EnemySkeletonMinion/KayKit Animated Character" parent_id_path=PackedInt32Array(831260168, 1299331446) index="0" unique_id=488906677]
 bones/0/rotation = Quaternion(-0.03486636, -0.0015222918, -0.043592807, 0.99843967)
 bones/1/rotation = Quaternion(-0.056529887, -5.8133744e-05, -0.00025197523, 0.9984009)
 bones/2/position = Vector3(0.0011771307, 0.0070539447, 0.00044124853)
@@ -45,24 +39,6 @@ bones/3/rotation = Quaternion(-0.49646336, 0.70338464, -0.3635853, -0.35578078)
 bones/4/position = Vector3(-0.0012154712, 0.0071233, 0.0006630595)
 bones/4/rotation = Quaternion(0.53700054, -0.23110664, -0.76492876, -0.27037796)
 bones/5/rotation = Quaternion(0.5356955, -0.13649851, 0.65527767, 0.5147909)
-
-[node name="Body" parent="EnemySkeletonMinion/RootNode/KayKit Animated Character/Skeleton3D" index="1"]
-transform = Transform3D(0.9961947, 0.08715572, 1.1874363e-08, -0.08694341, 0.99376804, 0.06975663, 0.0060796775, -0.06949118, 0.997564, 0, 0, 0)
-
-[node name="Head" parent="EnemySkeletonMinion/RootNode/KayKit Animated Character/Skeleton3D" index="2"]
-transform = Transform3D(0.99615127, 0.08710645, 0.009750802, -0.08742678, 0.97949797, 0.18149394, 0.0062584016, -0.1816479, 0.9833436, 0.00062019826, 0.007071633, -0.00049449777)
-
-[node name="ArmLeft" parent="EnemySkeletonMinion/RootNode/KayKit Animated Character/Skeleton3D" index="3"]
-transform = Transform3D(0.473261, 0.49786395, -0.7267434, -0.4922583, -0.5346978, -0.6868628, -0.730553, 0.6828102, -0.00797398, 0.0017874431, 0.006938421, -4.285667e-05)
-
-[node name="ArmRight" parent="EnemySkeletonMinion/RootNode/KayKit Animated Character/Skeleton3D" index="4"]
-transform = Transform3D(-0.26158014, -0.7244327, -0.63778764, 0.12246289, -0.6803656, 0.72256863, -0.957382, 0.11090415, 0.2666861, -0.0005900097, 0.007230838, 0.00015904807)
-
-[node name="HandSlotLeft" parent="EnemySkeletonMinion/RootNode/KayKit Animated Character/Skeleton3D" index="5"]
-transform = Transform3D(-0.96516454, -0.21717456, -0.14592105, -0.2316595, 0.45007485, 0.86241925, -0.12161973, 0.86618096, -0.48470622, 0.004530288, 0.003992652, 0.0037188977)
-
-[node name="HandSlotRight" parent="EnemySkeletonMinion/RootNode/KayKit Animated Character/Skeleton3D" index="6"]
-transform = Transform3D(-0.94739395, 0.29053304, 0.13429525, 0.2620459, 0.46314305, 0.8466585, 0.18378404, 0.8373113, -0.5149124, -0.0045810714, 0.0034825515, 0.0007700439)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2042726396]
 transform = Transform3D(0.765, 0, 0, 0, 0.765, 0, 0, 0, 0.765, 0, 0.754766, 0)
@@ -77,8 +53,9 @@ autostart = true
 
 [node name="AnimationTree" type="AnimationTree" parent="." unique_id=275855801]
 root_node = NodePath("../EnemySkeletonMinion")
-root_motion_track = NodePath("RootNode/KayKit Animated Character/Skeleton3D:Body")
+root_motion_track = NodePath("")
 tree_root = SubResource("AnimationNodeStateMachine_37bnq")
 anim_player = NodePath("../EnemySkeletonMinion/AnimationPlayer")
+active = true
 
 [editable path="EnemySkeletonMinion"]

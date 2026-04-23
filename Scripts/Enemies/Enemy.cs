@@ -30,7 +30,7 @@ public partial class Enemy : AnimatableBody3D
     private GpuParticles3D _damageParticles;
 
     private ProgressBar _lifebar;
-    private Camera3D _camera;
+    private Camera3D _camera => GetViewport().GetCamera3D();
     private Label _username;
     private Timer _attackCooldown;
 
@@ -46,8 +46,6 @@ public partial class Enemy : AnimatableBody3D
 
         _attackCooldown = GetNode<Timer>("AttackCooldown");
         _damageParticles = GetNode<GpuParticles3D>("DamageParticles");
-
-        _camera = GetNode<Camera3D>("../Player/Camera3D");
 
         // var hud = GetNode<Control>("../HUD");
         // _lifebar = GD.Load<PackedScene>("res://Prefabs/UI/enemy_life_bar.tscn").Instantiate<ProgressBar>();
@@ -119,7 +117,7 @@ public partial class Enemy : AnimatableBody3D
         _gameManager.Player.TakeDamages(Damages);
     }
 
-    internal void SetName(string username)
+    internal new void SetName(string username)
     {
         _username = new() { Text = username };
         GetNode<Control>("../HUD").AddChild(_username);
